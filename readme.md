@@ -30,15 +30,27 @@ Repo holding the exercises from the book.
 		</ul>
 	<li>When you compile code that uses the .NET Framework library, you don't immediately create operating system specific code.
 		<ul>
-			<li>Instead you Compile code into <b>Common Intermediate Language(CIL)</b> code</li>
+			<li>Instead you Compile code into <b>Common Intermediate Language(CIL)</b> code
 				<ul>
 					<li>This code isnt specific to any operating system and isnt specific to C#</li>
 					<li>This compilation step is carried out by Visual Studio when you develope C# applications</li>
 				</ul>
+			</li>
+			<li>More work is required to execute an application, and that is the job of a <b>just-in-time(JIT)</b> compiler
+				<ul>
+					<li>The JIT compiles CIL into native code tht is specific to the OS and machine architecture being targeted.</li>
+				</ul>
+			</li>
 		</ul>
 	</li>
-	
+	<li>You might come across references to <b>Microsoft Intermediate Language(MSIL)</b> or just IL.
+		<ul>
+			<li>MSIL was the original name for CIL, and many developers still used this terminology.</li>
+			<li><b>MSIL == CIL</b></li>
+		</ul>
+	</li>	
 </ol>
+
 
 
 
