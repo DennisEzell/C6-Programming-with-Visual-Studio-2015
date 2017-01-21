@@ -2,6 +2,7 @@
 Repo holding the exercises from the book.
 
 ## Chapter 1: Introducing C# 
+### What is the .NET Framework?
 <ol>
 	<li><b>Mono</b> is an open source version of the .NET Framework (including a C# Compiler) that runs on several operating systems, including various flavors of Linux and Mac OS.
 		<ul>
@@ -20,75 +21,32 @@ Repo holding the exercises from the book.
 		</ul>		
 	</li>
 </ol>
-
-
+### Writing Applications Using the .NET Framework
 <ol>
-	<li></li>
-</ol>
-
-<ul>
-	<li>
+	<li>In order for C# code to execute, it must be converted into a langauge that the target operating system understands, known as <b>native code</b></li>
+		<ul>
+			<li>This conversion is called <b>compiling</b> code, an act that is performed by a compiler.</li>
+			<li>Under the .NET Framework, this is a two stage process</li>
+		</ul>
+	<li>When you compile code that uses the .NET Framework library, you don't immediately create operating system specific code.
+		<ul>
+			<li>Instead you Compile code into <b>Common Intermediate Language(CIL)</b> code</li>
+				<ul>
+					<li>This code isnt specific to any operating system and isnt specific to C#</li>
+					<li>This compilation step is carried out by Visual Studio when you develope C# applications</li>
+				</ul>
+		</ul>
 	</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ASP .NET practice
-Repo holding a simple ASP .NET MVC app to experiment with various C# functions
-
-
-### Step 1: Create git repo and check in project
-<ol>
-  <li>Created new git repo </li>
-  <li>Clone this repo into a local directory that VS will be creating the new .NET project within
-    <ul>
-      <li>I created a new directory to hold my new git repo on my local </li>
-      <li>I created the new directory at C:\Users\Deeze814\Source\Repos </li>
-    </ul>
-  </li>
-  <li>I then Shift+Right Click to open a git bash terminal in this directory and issued the commands
-    <ul>
-      <li>git clone https://github.com/DennisEzell/DotNET_practice.git
-        <ul>
-          <li>This will create a new folder in the Dashboard directory named after the repo being cloned</li>
-          <li>Results in a path of C:\Users\Deeze814\Source\Repos\DotNET_practice\</li>
-        </ul>
-      </li>      
-    </ul>
-  </li>
-  <li>Then I opened Visual Studios and performed the following steps:
-    <ul>
-      <li>Click File --> New --> Project</li>
-      <li>Popup Left Menu:   Templates --> Visual C#</li>
-      <li>Popup Right Menu:  ASP.NET Web Application</li>
-      <li>Popup Bottom Menu: Following values-->
-          <ul>
-            <li>Name:           Dashboard</li>
-            <li>Location:       C:\Users\Deeze814\Source\Repos\DotNET_practice\</li>
-            <li>Solution:       Create new Solution</li>
-            <li>Solution Name:  Dashboard</li>
-          </ul>
-      </li>
-      <li>On the next screen I selected the MVC option</li>
-    </ul>
-  </li>
-  <li>Open Git bash and path down into the cloned repo location (C:\Users\Deeze814\Source\Repos\DotNET_practice)</li>
-  <li>Run the following Git commands
-    <ul>
-      <li>$ git pull</li>
-      <li>$ git add *</li>
-      <li>$ git commit -m "Initial commit of C# project"</li>
-      <li>$ git push</li>
-    </ul>
-  </li>
+	
 </ol>
+
+
+
+
+
+
+
+
+
+
+
