@@ -95,6 +95,14 @@ Repo holding the exercises from the book.
 
 ## Chapter 2: Writing a C# Programming
 ### The Visual Studio 2015 Development Environment
+<ol>
+	<li>To reset settings to <b>Visual C# Development settings</b>, you simply have to import them
+		<ul>
+			<li>Select <b>Tools</b> --> <b>Import and Export Settings</b> --> <b>Reset All Settings</b></li>
+		</ul>
+	</li>
+	<li>To see the <b>Server Tab</b>, click <b>View</b> --> <b>Server Explorer</b></li>
+</ol>
 
 
 
