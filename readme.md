@@ -50,15 +50,51 @@ Repo holding the exercises from the book.
 		</ul>
 	</li>	
 </ol>
+### Assemblies
+<ol>
+	<li>When you compile and application, the CIL code is stored in an <b>assembly</b>
+		<ul>
+			<li>Assemblies included both:
+				<ul>
+					<li>Executable application files that you can run directly on Windows without the need for any programs</li>
+					<li>These have a <b>.exe</b> file extension</li>
+				</ul>
+				<ul>
+					<li>Libraries for use by other applications</li>
+					<li>These have a <b>.dll</b> extension</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>If you write code that performs tasks required by multiple applications, you want to place the reusable code in a place accessible by all the applications
+		<ul>
+			<li>In the .NET Framework, this location is known as the <b>global assembly cache(GAC)</b></li>
+			<li>Placing code in the GAC is simple, you just place the assembly containing the code in the directory containing this cache.</li>
+		</ul>
+	</li>		
+</ol>
+### Managed Code
+<ol>
+	<li>Code written using the .NET Framework is <b>managed</b> when it is executed
+		<ul>
+			<li>A stage usually referred to as <b>runtime</b></li>
+		</ul>
+	</li>
+	<li>This means that the CLR looks after your applications by managing memory, handling security, allowing cross-language debugging, and so on</li>
+</ol>
+### Linking
+<ol>
+	<li>It is possible to split application code across multiple source code files, which are then compiled together into a single assembly.</li>
+	<li>This process is known as <b>linking</b>
+		<ul>
+			<li>It is required because it is far easier to work with several smaller files than one enormous one</li>
+			<li>You can seperate logically related code into an individual file so that it can be worked on independently.</li>
+		</ul>
+	</li>	
+</ol>
 
-
-
-
-
-
-
-
-
+## Chapter 2: Writing a C# Programming
+### The Visual Studio 2015 Development Environment
 
 
 
