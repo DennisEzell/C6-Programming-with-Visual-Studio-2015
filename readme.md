@@ -1,5 +1,5 @@
-# C#6 Programming with Visual Studio 2015
-Repo holding the exercises from the book.
+# C#6 Programming with Visual Studio 2015 - Bejamin Perkins, Jacob Vibe Hammer, Jon D. Reid
+Repo holding notes and exercises from the book.
 
 ## Chapter 1: Introducing C# 
 ### What is the .NET Framework?
@@ -92,6 +92,43 @@ Repo holding the exercises from the book.
 		</ul>
 	</li>	
 </ol>
+### Applications You Can Write with C#
+<ol>
+	<li><b>Desktop applications</b>
+		<ul>
+			<li>Applications, such as Microsoft Office, that have familiar Windows look and feel about them.</li>
+			<li>This is made simple by using <b>Windows Presentation Foundation(WPF)</b> module of the .NET framework</li>
+		</ul>
+	</li>
+	<li><b>Windows Store Applications</b>
+		<ul>
+			<li>Windows 8 introduced a new type of application, known as Windows Store Application</li>
+			<li>This type of application is designed primarily for touch devices, and it is usually run full screen, with minimum clutter, and an emphasis on simplicity</li>
+			<li>You can create these applications in server ways including WPF</li>
+		</ul>
+	</li>
+	<li><b>Cloud/Web Applications</b>
+		<ul>
+			<li>The .NET Framework includes a powerful system named <b>ASP .NET</b>, for generating web content dynamically, enabling personalization, security, and much more</li>
+			<li>Additionally, these applications can be hosted and accessed in the Cloud, such as the Microsoft Azure platform</li>
+		</ul>
+	</li>
+	<li><b>Web APIs</b>
+		<ul>
+			<li>An ideal framework for building RESTful HTTP services that support a broad variety of clients, including mobile devices and browsers</li>
+		</ul>
+	</li>
+	<li><b>WCF services (Windows Communication Foundation)</b>
+		<ul>
+			<li>A way to create versatile distributed applications</li>
+			<li>Using WCF, you can exchange virtually any data over local networks or the Internet using simple syntax regardless fo the language used to created a service or the system on which it resides</li>
+		</ul>
+	</li>
+	<li>Any of these types might also require some form of database access, which can be achieved useing the <b>ADO.NET(Active Data Objects)</b> section of the .NET Framework</li>
+		<ul>
+			<li>Through ADO.NET <b>Entity Framework</b> or through <b>LINQ(Language Integrated Query)</b>, many other resources can be drawn on such as tools for creating networking components, outputting graphics, performing complex mathematical tasks, and so on</li>
+		</ul>
+</ol> 
 
 ## Chapter 2: Writing a C# Programming
 ### The Visual Studio 2015 Development Environment
@@ -103,6 +140,13 @@ Repo holding the exercises from the book.
 	</li>
 	<li>To see the <b>Server Tab</b>, click <b>View</b> --> <b>Server Explorer</b></li>
 </ol>
-
-
+### Desktop Applications
+<ol>
+	<li>When building desktop applications, we use Visual Studio's interface building blocks(known as <b>controls</b>)
+		<ul>
+			<li>These controls are available for drag and drop from the WPF toolbox</li>
+		</ul>	
+	</li>
+	<li>The code is written in <b>XAML</b>, which is the language used to define user interfaces in WPF applications.</li>
+</ol>
 
