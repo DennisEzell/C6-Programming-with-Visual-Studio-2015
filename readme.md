@@ -148,5 +148,55 @@ Repo holding notes and exercises from the book.
 		</ul>	
 	</li>
 	<li>The code is written in <b>XAML</b>, which is the language used to define user interfaces in WPF applications.</li>
+	<li>Note that there is a .xaml file with an associated .cs file
+		<ul>
+			<li>This is because WPF (and .NET apps in general) are capable of keeping design aspects (such as text on a button) separate from the functionality aspectes(such as the even triggered when clicking a button)</li>
+			<li>This is the reason for "code behind files"
+				<ul>
+					<li>Separate design files (.xaml) from functionality files(.cs)</li>
+				</ul>
+			</li>			
+		</ul>
+	</li>
 </ol>
+
+## Variables and Expressions
+### Basic C# Syntax
+<ol>
+	<li>A set of three backslashes(///) denotes that you wish to extract comments in the form of XML to create documentation for you programs
+		<ul>
+			<li>In order for this documentation to be created, the comment must follow the rules of XML documentation as described at https://msdn.microsoft.com/library/aa288481.aspx</li>
+		</ul>
+	</li>
+</ol>
+### Simple Types
+<ol>
+	<li>The <b>u</b> character before some variable names are shorthand for <b>unsigned</b>
+		<ul>
+			<li>This means you cant store negative numbers in variables of those types.</li>
+		</ul>
+	</li>
+</ol>
+### Literal Types
+<ol>
+	<li>You can specify strings as <b>verbatim</b>
+		<ul>
+			<li>This means that all characters contained between two double quotation marks are included in the string.</li>
+			<li>Including end-of-line characters and characters that would otherwise need escaping</li>
+			<li>To declare a string as verbatim, place the <b>@</b> character before the string
+				<ul>
+					<li>@"Verbatim string literal"</li>
+				</ul>
+			</li>
+			<li>Useful when creating strings that represent file path values
+				<ul>
+					<li>Non-verbatim: "C:\\Temp\\MyDir\\MYFile.doc"</li>
+					<li>Verbatim: @"C:\Temp\MyDir\MyFile.doc"</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+
+
 
