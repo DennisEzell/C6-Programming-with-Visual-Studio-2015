@@ -160,7 +160,7 @@ Repo holding notes and exercises from the book.
 	</li>
 </ol>
 
-## Variables and Expressions
+## Chapter 3:Variables and Expressions
 ### Basic C# Syntax
 <ol>
 	<li>A set of three backslashes(///) denotes that you wish to extract comments in the form of XML to create documentation for you programs
