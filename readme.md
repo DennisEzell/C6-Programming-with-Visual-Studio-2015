@@ -271,10 +271,10 @@ Repo holding notes and exercises from the book.
 					<p>
 						byte destinationVar;<br/>
 						short sourceVar = 281;<br/>
-						destinationVar = (byte)sourceVar;      (<b>Overflow!</b>)<br/>
+						destinationVar = (byte)sourceVar;      (<b>Overflow!</b>)<br/><br/>
 						
 						sourceVar value = 281<br/>
-						destination value = 25<br/>
+						destination value = 25<br/><br/>
 
 						281 = 1 0001 1001<br/>
 						25  = 0 0001 1001<br/>
