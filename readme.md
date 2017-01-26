@@ -197,6 +197,95 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+### Namespaces
+<ol>
+	<li>C#6 has introduced the <b>using static</b> keyword
+		<ul>
+			<li>This allows the inclusion of static members directly into the scope of a C# program</li>
+			<li>For example you can use the <b>WriteLine()</b> by prefixing the name space befoe the method called
+				<ul>
+					<li><b>System.Console.WriteLine()</b></li>
+				</ul>
+			</li>
+			<li>But if you put <b>using static System.Console</b> at the top of your program you no longer have to prefix the namespace to the method call
+				<ul>
+					<li><b>WriteLine()</b></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+
+## Chapter 4: Flow Control
+### Boolean Bitwise and Assignment Operator
+<ol>
+	<li><b>&=</b>
+		<ul>
+			<li>var1 &= var2;</li>
+			<li><b>var1</b> is assigned the value that is the result of <b>var1 & var2</b></li>
+		</ul>
+	</li>
+	<li><b>|=</b>
+		<ul>
+			<li>var1 |= var2</li>
+			<li><b>var1</b> is assigned the value that is the result of <b>var1 | var2</b></li>
+		</ul>
+	</li>
+	<li><b>^=</b> (^ is XOR - exclusive OR)
+		<ul>
+			<li>var 1 ^= var2</li>
+			<li><b>var1</b> is assigned the value that is the result of <b>var1 ^ var2</b></li>
+		</ul>
+	</li>
+	<li><b>NOTE:</b> the &= and |= assignment opertors do not make use of the && and || conditional Boolean operators; that is, all operands are processed regardless of the value to the left of the assignment operator</li>
+</ol>
+
+## Chapter 5: More about Variables
+### More Variable Types
+<ol>
+	<li><b>Enumerations</b>
+		<ul>
+			<li>Variable types that have a user defined discrete set of possible values that can be used in a human readable way</li>
+		</ul>
+	</li>
+	<li><b>Structs</b>
+		<ul>
+			<li>Composite variable types made up of a user defined set of other variable types</li>
+		</ul>
+	</li>
+	<li><b>Arrays</b>
+		<ul>
+			<li>Types that hold multiple variables of one type, allowing index access to the individual values</li>
+		</ul>
+	</li>
+</ol>
+### Explicit Conversions
+<ol>
+	<li><b>Overflow</b>
+		<ul>
+			<li>Attempting to fit a value into a variable when that value is too big for the type of that variable results in <b>overflow</b></li>
+			<li>Two keywords exist for setting what is called <b>overflow checking context</b></li>
+			<ul>
+				<li><b>checked</b> - Will throw an <b>OverflowException</b> when code executed results in an overflow</li>
+				<li><b>unchecked</b> - Will allow overflow to occur and will chop off values beyond the scope of the variable type
+					<p>
+						byte destinationVar;
+						short sourceVar = 281;
+						destinationVar = (byte)sourceVar;      (<b>Overflow!</b>)
+						
+						sourceVar value = 281
+						destination value = 25
+
+						281 = 1 0001 1001
+						25  = 0 0001 1001
+						255 = 0 1111 1111
+					</p>
+				</li>				
+			</ul>
+		</ul>
+	</li>
+</ol>
+
 
 
 
