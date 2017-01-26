@@ -269,16 +269,16 @@ Repo holding notes and exercises from the book.
 				<li><b>checked</b> - Will throw an <b>OverflowException</b> when code executed results in an overflow</li>
 				<li><b>unchecked</b> - Will allow overflow to occur and will chop off values beyond the scope of the variable type
 					<p>
-						byte destinationVar;
-						short sourceVar = 281;
-						destinationVar = (byte)sourceVar;      (<b>Overflow!</b>)
+						byte destinationVar;<br/>
+						short sourceVar = 281;<br/>
+						destinationVar = (byte)sourceVar;      (<b>Overflow!</b>)<br/>
 						
-						sourceVar value = 281
-						destination value = 25
+						sourceVar value = 281<br/>
+						destination value = 25<br/>
 
-						281 = 1 0001 1001
-						25  = 0 0001 1001
-						255 = 0 1111 1111
+						281 = 1 0001 1001<br/>
+						25  = 0 0001 1001<br/>
+						255 = 0 1111 1111<br/>
 					</p>
 				</li>				
 			</ul>
