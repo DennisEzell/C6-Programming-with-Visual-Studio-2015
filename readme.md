@@ -194,6 +194,16 @@ Repo holding notes and exercises from the book.
 					<li>Verbatim: @"C:\Temp\MyDir\MyFile.doc"</li>
 				</ul>
 			</li>
+			<li>Verbatim can also be used in conjunction with String interpolation
+				<ul>
+					<li>In the case of wanting double quotes in a verbatim string you have to use "" within the verbatim string</li>
+						<p>
+							Console.WriteLine(@”Foo “”Bar”” Baz “”Quux”””);<br/>
+							 Foo “Bar” Baz “Quux”							
+						</p>
+					<li>To see an example of String interpolation used with a verbatim command, look at Ch05Ex01-TypeConversion</li>
+				</ul>
+			</li>
 		</ul>
 	</li>
 </ol>
