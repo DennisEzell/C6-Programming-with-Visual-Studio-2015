@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
 using static System.Convert;
 
-namespace Ch05Ex01_TypeConversion
+namespace TypeConversion
 {
     class Program
     {

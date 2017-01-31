@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ch05Ex02_Enum.Enum
+namespace Enumeration.Enum
 {
-    enum Orientation : byte
+    public enum Orientation : byte
     {
         north = 1,
         south = 2,

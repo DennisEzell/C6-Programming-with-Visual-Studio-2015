@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-using Ch05Ex02_Enum.Enum;
+using Enumeration.Enum;
 
-namespace Ch05Ex02_Enum
+namespace Enumeration
 {
     class Program
     {

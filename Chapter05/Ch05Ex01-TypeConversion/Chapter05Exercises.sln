@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch05Ex01-TypeConversion", "Ch05Ex01-TypeConversion\Ch05Ex01-TypeConversion.csproj", "{E293712E-276B-41F9-9E11-269807BAC447}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeConversion", "Ch05Ex01-TypeConversion\TypeConversion.csproj", "{E293712E-276B-41F9-9E11-269807BAC447}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch05Ex02-Enum", "Ch05Ex02-Enum\Ch05Ex02-Enum.csproj", "{F243A8F5-A65D-48F9-8322-AD2F62B083A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumeration", "Ch05Ex02-Enum\Enumeration.csproj", "{F243A8F5-A65D-48F9-8322-AD2F62B083A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Struct", "Struct\Struct.csproj", "{619BCD2F-5C27-4EB4-AB79-466C9D6AC33D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F243A8F5-A65D-48F9-8322-AD2F62B083A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F243A8F5-A65D-48F9-8322-AD2F62B083A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F243A8F5-A65D-48F9-8322-AD2F62B083A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619BCD2F-5C27-4EB4-AB79-466C9D6AC33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619BCD2F-5C27-4EB4-AB79-466C9D6AC33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619BCD2F-5C27-4EB4-AB79-466C9D6AC33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619BCD2F-5C27-4EB4-AB79-466C9D6AC33D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

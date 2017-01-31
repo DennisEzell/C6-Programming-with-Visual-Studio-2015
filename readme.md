@@ -295,6 +295,25 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+### String Manipulation
+<ol>
+	<li>A <b>String</b> type variable can be treated as a read-only array of <b>char</b> variables
+		<ul>
+			<li>This means you cant assign individual characters to a string the same way you would access them</li>
+			<li>To get a <b>char array</b> that you can write to, you can use <b>ToCharArray()</b>
+				<p>
+					string myString = "A String";<br/>
+					char[] myChars = myString.ToCharArray();
+				</p>
+			</li>			
+		</ul>
+	</li>
+	<li>The <b>PadLeft()</b> and <b>PadRight()</b> commands can be used to include extra spacing to a string
+		<p>
+			<string>.PadLeft(10)
+		</p>
+	</li>
+</ol>
 
 
 
