@@ -310,11 +310,52 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>The <b>PadLeft()</b> and <b>PadRight()</b> commands can be used to include extra spacing to a string
 		<p>
-			<string>.PadLeft(10)
+			&lt;string&gt;.PadLeft(10)
 		</p>
 	</li>
 </ol>
 
+## Chapter 6: Defining and Using Functions
+### Parameters
+<ol>
+	<li>Careful reading of the C# specification shows a subtle distinction between <b>parameters</b> and <b>arguments</b>
+		<ul>
+			<li><b>Parameters</b> are defined as part of a function definition
+				<ul>
+					<li>Parameters are the part of the <b>signature</b> </li>
+				</ul>
+			</li>
+			<li><b>Arguments</b> are passed to a function by calling code
+				<ul>
+					<li>Arguments are the values sent in from calling code to be used in the execution of the method</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+### Parameter Arrays
+<ol>
+	<li>C# enables you to specify one (and only one) special parameter for a function.</li>
+	<li>This parameter <b>must be the last parameter</b> in the function definition, and is known as a <b>parameter array</b></li>
+	<li>Parameter arrays enable you to call functions using a variable amount of parameters, and they are defined using the <b>params</b> keyword</li>
+	<li>Similar to Java's <b>varargs</b> parameter</li>
+</ol>
+### Pass by Reference
+<ol>
+	<li>In C#, if you pass a primitive variable as an argument to a function, you pass it by value. Meaning any modification done to the value does not affect the variable's value in the scope from which the call was made.</li>
+	<li>If you want to pass a variable explicitly by reference, you have to specify using the <b>ref</b> keyword before the parameter.</li>
+</ol>
+### Out Parameter
+<ol>
+	<li>You can specify that a given parameter is an <b>out parameter</b> by using the keyword <b>out</b></li>
+	<li>In effect, this gives you almost exactly the same behaviour as a reference parameter, in that the value of the parameter at the end of the function execution is returned to the variable used in the function call</li>
+	<li>Key differences between <b>ref</b> and <b>out</b> parameters
+		<ul>
+			<li>Whereas it is illegal to use an unassigned variable as a <b>ref</b> parameter, you can use an unassigned variable as an <b>out</b> parameter</li>
+			<li>An <b>out</b> parameter must be treated as an unassigned value by the function that uses it</li>
+		</ul>
+	</li>
+</ol>
 
 
 
