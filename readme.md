@@ -356,6 +356,46 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+### Delegates
+<ol>
+	<li><b>Delegates</b> are types that enable you to store reference to functions
+		<ul>
+			<li>This variable type refers to a function by:
+				<ul>
+					<li>Specifying the function's return type</li>
+					<li>Specifying the function's signature</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
 
+## Chapter 7: Error Handling
 
+### try..catch...finally
+<ol>
+	<li>The C# language includes syntax for <b>structured exception handling (SEH)</b></li>
+	<li>The following illustrates SEH
+		<p>
+			try<br/>
+			{<br/>
+				...<br/>
+			}<br/>
+			catch (&lt;exceptionType$gt; e) when (filterIsTrue)<br/>
+			{<br/>
+				&lt;await methodName(e);&gt<br/>
+				...<br/>
+			}<br/>
+			finally<br/>
+			{<br/>
+				...<br/>
+			}<br/>
+		</p>
+	</li>
+	<li><b>await</b> can be used optionally within the <b>catch</b> or <b>finally</b> blocks
+		<ul>
+			<li><b>await</b> is used to support advanced asnchronous programming techniques.</li>
+		</ul>
+	</li>
+</ol>
 
