@@ -379,11 +379,11 @@ Repo holding notes and exercises from the book.
 		<p>
 			try<br/>
 			{<br/>
-				...<br/>
+				&Tab;...<br/>
 			}<br/>
-			catch (&lt;exceptionType$gt; e) when (filterIsTrue)<br/>
+			catch (&lt;exceptionType&gt; e) when (filterIsTrue)<br/>
 			{<br/>
-				&lt;await methodName(e);&gt<br/>
+				&Tab;&lt;await methodName(e);&gt<br/>
 				...<br/>
 			}<br/>
 			finally<br/>
