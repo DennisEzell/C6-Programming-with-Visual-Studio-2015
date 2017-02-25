@@ -376,10 +376,10 @@ Repo holding notes and exercises from the book.
 <ol>
 	<li>The C# language includes syntax for <b>structured exception handling (SEH)</b></li>
 	<li>The following illustrates SEH
-		<p>
+		<pre><p>
 			try<br/>
 			{<br/>
-				\t...<br/>
+				...<br/>
 			}<br/>
 			catch (&lt;exceptionType&gt; e) when (filterIsTrue)<br/>
 			{<br/>
@@ -390,7 +390,7 @@ Repo holding notes and exercises from the book.
 			{<br/>
 				...<br/>
 			}<br/>
-		</p>
+		</p></pre>
 	</li>
 	<li><b>await</b> can be used optionally within the <b>catch</b> or <b>finally</b> blocks
 		<ul>
