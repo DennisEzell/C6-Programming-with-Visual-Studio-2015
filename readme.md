@@ -456,7 +456,7 @@ Repo holding notes and exercises from the book.
 			...<br/>
 			using(&lt;VariableName&gt)<br/>
 			{<br/>
-			&nbsp;&nbsp;...
+			&nbsp;&nbsp;...<br/>			
 			}<br/>			
 		</p>
 	</li>	
