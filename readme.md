@@ -397,5 +397,68 @@ Repo holding notes and exercises from the book.
 			<li><b>await</b> is used to support advanced asnchronous programming techniques.</li>
 		</ul>
 	</li>
+	<li>C#6 introduced a concept called <b>exception filtering</b>
+		<ul>
+			<li>This is done by ading the <b>when</b> keyword after the exception type expression</li>
+			<li>If that exception type occurs and the filter expression is true, only then will the code in the <b>catch</b> block execute</li>
+		</ul>
+	</li>
 </ol>
 
+## Chapter 8: Introduction to OO Programming
+
+### Properties & Fields
+<ol>
+	<li>Fields are class members that store and provide direct access to object state data</li>
+	<li>Properties differ from fields in that they dont provided direct access to the underlying data
+		<ul>
+			<li>Property values are accessed via methods
+				<ul>
+					<li>Common use is the <b>automatic property</b> notation of: {get; set;}</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+### Static Constructors
+<ol>
+	<li>When using static members in a class, you might want to intialize these members beforehand.</li>
+	<li>This is where a <b>static constructor</b> can be used
+		<ul>
+			<li>A class can have only a <b>single</b> static constructor</li>
+			<li>Contains no access modifiers or parameters</li>
+			<li>Cannot be called directly</li>
+		</ul>
+	</li>
+	<li>Static constructor execution occurs when:
+		<ul>
+			<li>An instance of a class is created</li>
+			<li>A static member of the class containing the static constructor is accessed</li>
+		</ul>
+	</li>
+	<li>No matter how many instances of a class are created, the static constructor will be called only once.</li>
+</ol>
+### Interfaces
+<ol>
+	<li>When interfaces need to change, you should create a new interface that <b>extends</b> the old one
+		<ul>
+			<li>This is to ensures that you dont break code implementing the original interface</li>
+			<li>Including a version number in the new interface iteration, such as V2, has become a standard way of achieving this</li>
+		</ul>
+	</li>
+</ol>
+### Disposable Objects
+<ol>
+	<li>If an object implements the <b>IDisposable</b> interface and implements the <b>Dispose()</b> method, then this object will free up any system resources just before it goes out of scope</li>
+	<li>For instance say the &lt;ClassName&gt; implements the IDisposable interface.
+		<p>
+			&lt;ClassName&gt; &lt;VariableName&gt; = new &lt;ClasName&gt;();<br/>
+			...<br/>
+			using(&lt;VariableName&gt)<br/>
+			{<br/>
+				...
+			}<br/>			
+		</p>
+	</li>	
+	<li>After the <b>using</b> block executes, then the Class will call its Dispose() method to free up resources</li>
+</ol>
