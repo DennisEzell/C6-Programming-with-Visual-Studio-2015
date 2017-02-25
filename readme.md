@@ -379,16 +379,16 @@ Repo holding notes and exercises from the book.
 		<p>
 			try<br/>
 			{<br/>
-			<pre>	...<br/></pre>
+			&nbsp;&nbsp;...<br/>
 			}<br/>
 			catch (&lt;exceptionType&gt; e) when (filterIsTrue)<br/>
 			{<br/>
-				&Tab;&lt;await methodName(e);&gt<br/>
-				...<br/>
+			&nbsp;&nbsp;&lt;await methodName(e);&gt<br/>
+			&nbsp;&nbsp;...<br/>
 			}<br/>
 			finally<br/>
 			{<br/>
-				...<br/>
+			&nbsp;&nbsp;...<br/>
 			}<br/>
 		</p>
 	</li>
@@ -456,7 +456,7 @@ Repo holding notes and exercises from the book.
 			...<br/>
 			using(&lt;VariableName&gt)<br/>
 			{<br/>
-				...
+			&nbsp;&nbsp;...
 			}<br/>			
 		</p>
 	</li>	
