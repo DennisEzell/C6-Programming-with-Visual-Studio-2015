@@ -379,7 +379,7 @@ Repo holding notes and exercises from the book.
 		<p>
 			try<br/>
 			{<br/>
-				&Tab;...<br/>
+				\t...<br/>
 			}<br/>
 			catch (&lt;exceptionType&gt; e) when (filterIsTrue)<br/>
 			{<br/>
