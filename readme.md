@@ -462,3 +462,175 @@ Repo holding notes and exercises from the book.
 	</li>	
 	<li>After the <b>using</b> block executes, then the Class will call its Dispose() method to free up resources</li>
 </ol>
+### Inheritance
+<ol>
+	<li>When using inheritance from a base class, the question of member accessibility becomes an important one
+		<ul>
+			<li>Private members of the base class are not accessible from a derived class, but public ones are.</li>
+			<li>The <b>protected</b> accessibility modifier gives access to base class members but protected members are treated as <b>private</b> by external code</li>
+		</ul>
+	</li>
+	<li>Members of a base class can also be <b>virtual</b>
+		<ul>
+			<li>Which means that the member can be overridden by the class that inherits it.</li>
+			<li>Therefore, the derived class can provide an alternative implementation for the member</li>
+			<li>This alternative implementation does not delete the original base class code, but shields it from external code</li>
+			<li>If no alternative is supplied, then any external code automatically uses the base class implementation.</li>
+			<li>Virtual members <b>cannot be private</b>, as this would defeat the purpose of marking the member as virtual</li>
+		</ul>
+	</li>
+	<li>A class may also be <b>sealed</b>, which means it cannot be used as a base class.</li>
+</ol>
+### Polymorphism
+<ol>
+	<li>Polymorphism allows us to use variable types to refer to base/derived class instances</li>
+	<li>Typically this is done by using a variable of the base class type, and assigning it an instance of the derived class</li>
+	<li><b>Note:</b> You cant call methods that are defined only in the derived class when using a base class variable type.
+		<p>
+			Animal myAnimal = new Cow();<br/>
+			myAnimal.EatFood() // EatFood is defined in both the base class (Animal) and derived class (Cow). This will call the Cow.EatFood() <br/>			
+			<br/>
+			myAnimal.Moo() // Will not compile because you cant access the dervied class method (Cow.Moo()) from a base class variable. <br/>
+			<br/>
+			Cow myCow = (Cow)myAnimal;<br/>
+			myCow.Moo(); //Will work when we cast the base class into a derived class variable. <br/>
+		</p>
+	</li>
+</ol>
+### Relationships Between Objects
+<ol>
+	<li><b>Containment</b>
+		<ul>
+			<li>One class contains another</li>
+			<li>This is similiar to inheritance but allows the containing class to control access to the members of the contained class</li>
+			<li>Allows additional processing before using the members of a contined class</li>
+		</ul>
+	</li>
+	<li><b>Collections</b>
+		<ul>
+			<li>One class acts as a container for multiple instances of another class.</li>
+			<li>This is similiar to having arrays of objects, but collections have additional functionality, including indexing, sorting, resizing, and more.</li>
+			<li>Collections are basically an array with bells and whistles
+				<ul>
+					<li>They are implemented as a class and usually implement additional functionality such as Add() and Remove() methods</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+
+## Chapter 9: Defining a Class
+### Class Definitions in C#
+<ol>
+	<li>By default, classes are declared as <b>internal</b>, meaning only code in the current project will have access to it.</li>
+	<li>If a base class is specified, it must be the first thing after the colon, with interfaces specifed afterwards.</li>
+</ol>
+### Constructor Execution Sequence
+<ol>
+	<li>Consider the following class structures
+		<ul>
+			<li>Base Class:</li>
+			<p>
+				public class MyBaseClass<br/>
+				{<br/>
+				&nbsp;&nbsp;public MyBase()<br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/><br/>
+				&nbsp;&nbsp;public MyBaseClass(int i)<br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/>
+				}
+			</p>
+			<li>Derived Class:</li>
+			<p>
+				public class MyDerivedClass : MyBaseClass<br/>
+				{<br/>
+				&nbsp;&nbsp;public MyDerivedClass()<br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/><br/>
+				&nbsp;&nbsp;public MyDerivedClass(int i)<br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/><br/>
+				&nbsp;&nbsp;public MyDerivedClass(int i, int j)<br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/>				
+				}
+			</p>
+		</ul>
+	</li>
+	<li>You could instantiate the <b>MyDerivedClass</b> as follows
+		<ul>
+			<li>MyDerivedClass myObj = new MyDerivedClass();</li>
+			<li>The following sequence of events will occur
+				<ul>
+					<li>System.Object.Object() constructor will execute</li>
+					<li>MyBaseClass.MyBaseClass() constructor will execute</li>
+					<li>MyDerivedClass.MyDerivedClass() constructor will execute</li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>You could also do</li>
+			<li>MyDerivedClass myObj = new MyDerivedClass(4)</li>
+				<ul>
+					<li>System.Object.Object() constructor will execute</li>
+					<li>MyBaseClass.MyBaseClass() constructor will execute</li>
+					<li>MyDerivedClass.MyDerivedClass(int i) constructor will execute</li>
+				</ul>
+		</ul>
+	</li>
+	<li>If you wanted to control what base class constructor is called, you can use a <b>constructor initializer</b>
+		<ul>
+			<li>Do this by specifying the base class constructor to be be called from a derived class constructor</li>
+			<p>
+				public class MyDerivedClass : MyBaseClass<br/>
+				{<br/>
+				&nbsp;&nbsp;public MyDerivedClass()<br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/><br/>
+				&nbsp;&nbsp;public MyDerivedClass(int i)<br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/><br/>
+				&nbsp;&nbsp;public MyDerivedClass(int i, int j)<b> : base(i)</b><br/>
+				&nbsp;&nbsp;{<br/>
+				&nbsp;&nbsp;}<br/>				
+				}
+			</p>
+			<li>Now when we invoke the 2 argument constructor it will call the single argument constructor of the base class</li>
+			<p>
+				MyDerivedClass MyObj = new MyDerivedClass(4,8);
+			</p>
+			<li>This will cause the below sequence of events
+				<ul>
+					<li>System.Object.Object() constructor will execute</li>
+					<li>MyBaseClass.MyBaseClass(int i) constructor will execute</li>
+					<li>MyDerivedClass.MyDerivedClass(int i,int j) constructor will execute</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>You can also call another constructor in the same class using the <b>this</b> keyword
+		<p>
+			public class MyDerivedClass : MyBaseClass<br/>
+			{<br/>
+			&nbsp;&nbsp;public MyDerivedClass()<b> : this(5,6)</b><br/>
+			&nbsp;&nbsp;{<br/>
+			&nbsp;&nbsp;}<br/><br/>
+			&nbsp;&nbsp;public MyDerivedClass(int i)<br/>
+			&nbsp;&nbsp;{<br/>
+			&nbsp;&nbsp;}<br/><br/>
+			&nbsp;&nbsp;public MyDerivedClass(int i, int j) : base(i)<br/>
+			&nbsp;&nbsp;{<br/>
+			&nbsp;&nbsp;}<br/>				
+			}
+		</p>
+		<li>This will cause the below sequence of events
+			<ul>
+				<li>System.Object.Object() constructor will execute</li>
+				<li>MyBaseClass.MyBaseClass(int i) constructor will execute</li>
+				<li>MyDerivedClass.MyDerivedClass(int i,int j) constructor will execute</li>
+				<li>MyDerivedClass.MyDerivedClass() constructor will execute</li>
+			</ul>
+		</li>
+	</li>
+</ol>
