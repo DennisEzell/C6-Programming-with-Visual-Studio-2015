@@ -634,3 +634,13 @@ Repo holding notes and exercises from the book.
 		</li>
 	</li>
 </ol>
+### Class vs Structs
+<ol>
+	<li>Structs are value types</li>
+	<li>Classes are reference types</li>
+</ol>
+### Shallow Copy vs Deep Copy
+<ol>
+	<li>The <b>IClonable</b> interface enables you to deep copy by implementing its <b>Clone()</b> method</li>
+	<li>This method returns a value of type <b>System.Object</b></li>
+</ol>
