@@ -644,3 +644,34 @@ Repo holding notes and exercises from the book.
 	<li>The <b>IClonable</b> interface enables you to deep copy by implementing its <b>Clone()</b> method</li>
 	<li>This method returns a value of type <b>System.Object</b></li>
 </ol>
+
+## Chapter 10: Defining Class Members
+
+### Defining Fields
+<ol>
+	<li>Fields can use the keyword <b>readonly</b></li>
+	<li>This means the field can be assigned a value <b>only</b> during constructor execution or by initial assignment</li>
+</ol>
+### Defining Methods
+<ol>
+	<li>Methods are also defined using PascalCasing</li>
+	<li>In addition to the <b>static</b> keyword, methods can also use the following keywords
+		<ul>
+			<li><b>virtual: </b>The method can be overridden</li>
+			<li><b>abstract: </b>The method must be overridden in non-abstract dervied classess (only permitted in abstract classes)</li>
+			<li><b>override: </b>The method overrides a base class method (it must be used if a method is being overridden)</li>
+			<li><b>extern: </b>The method definition is found elsewhere</li>
+		</ul>
+	</li>
+</ol>
+### Defining Properties
+<ol>
+	<li>C#6 introduced a new feature called <b>expression based properties</b>
+		<p>
+		//Field used by property<br/>
+		private int myDoubledInt = 5;<br/><br/>
+		//Property<br/>	
+		public int MyDoubledIntProp => (myDoubledInt * 2);		
+		</p>
+	</li>
+</ol>
