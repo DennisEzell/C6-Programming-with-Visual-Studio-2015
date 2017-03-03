@@ -675,3 +675,26 @@ Repo holding notes and exercises from the book.
 		</p>
 	</li>
 </ol>
+### Automatic Properties
+<ol>
+	<li>An automatic property is declared with a simplified syntax and the C# compiler fills in the blaks for you
+		<p>
+			public int MyIntProp { get; set; }
+		</p>
+	</li>
+	<li>You can create an automatic property in Visual Studio by typing <b>'prop'</b> and then prest <b>TAB twice</b></li>
+</ol>
+### Hidden and Overridden Methods
+<ol>
+	<li>When you inherit a non-abstract method from a base class, you also inherit an implementation.</li>
+	<li>If the inherited member is <b>virtual</b> then you can override the base class implementation with the <b>override</b> keyword</li>
+	<li>Regardless of whether the inherited member is <b>virtual</b>, you can <b>hide</b> the implementation</li>
+	<li>You can hide base class implementation using the <b>new</b> keyword on the method declaration</li>
+	<li>Difference between <b>Overriding</b> and <b>Hiding</b>
+		<ul>
+			<li><b>Overriding</b> the base method will essentially overwrite the base class defined method with functionality with the subclass defined functionality</li>
+			<li><b>Hiding</b> the base class simply allows the subclass to define its own implementation for that method, but does not overwrite the existing implementation if the method is called from as base class reference</li>
+			<li>See Chapter 10 Exercise - HideVsOverride for more information</li>
+		</ul>
+	</li>
+</ol>
