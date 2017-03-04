@@ -14,22 +14,26 @@ namespace HideVsOverride
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            HideDeriveCallBase hidSubClass2 = new HideDeriveCallBase();
             HideDerived hideSubClass = new HideDerived();
             HideBase hideBaseClass;
             hideBaseClass = hideSubClass;
 
-            Write("Calling from Base Class reference:   ");
+            Write("Calling from Base Class reference: \n");
             hideBaseClass.DoSomething();
-            Write("\nCalling from Sub Class reference: ");
+            Write("Calling from Sub Class reference: \n");
             hideSubClass.DoSomething();
+
+            Write("Calling form a Sub class refernce, but using base.DoSomething() to call base class implementation: \n");
+            hidSubClass2.DoSomething();
 
             OverrideDerive overrideSubClass = new OverrideDerive();
             OverrideBase overrideBaseClass;
             overrideBaseClass = overrideSubClass;
 
-            Write("\nCalling from Base Class reference:   ");
+            Write("\nCalling from Base Class reference: \n");
             overrideBaseClass.DoSomething();
-            Write("\nCalling from Sub Class reference: ");
+            Write("\nCalling from Sub Class reference: \n");
             overrideSubClass.DoSomething();
 
             ReadKey();

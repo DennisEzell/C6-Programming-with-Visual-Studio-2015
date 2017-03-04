@@ -8,7 +8,7 @@ namespace HideVsOverride.Class.Override
         /// </summary>
         public virtual void DoSomething()
         {
-            WriteLine("BASE IMPLEMENTATION: OverrideBase.DoSomething() called");
+            WriteLine("\tBASE IMPLEMENTATION: OverrideBase.DoSomething() called\n");
         }
     }
 }

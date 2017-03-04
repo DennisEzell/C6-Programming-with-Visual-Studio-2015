@@ -6,7 +6,7 @@ namespace HideVsOverride.Class.Hide
     {
         public void DoSomething()
         {
-            WriteLine("BASE IMPLEMENTATION: HideBase.DoSomething() called");
+            WriteLine("\tBASE IMPLEMENTATION: HideBase.DoSomething() called\n");
         }
     }
 }

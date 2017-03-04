@@ -5,7 +5,7 @@ namespace HideVsOverride.Class.Override
     {
         public override void DoSomething()
         {
-            WriteLine("DERIVED IMPLEMENTATION: OverrideDerive.DoSomething() called");
+            WriteLine("\tDERIVED IMPLEMENTATION: OverrideDerive.DoSomething() called\n");
         }
     }
 }

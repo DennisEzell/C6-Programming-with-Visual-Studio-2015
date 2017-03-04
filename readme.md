@@ -694,7 +694,45 @@ Repo holding notes and exercises from the book.
 		<ul>
 			<li><b>Overriding</b> the base method will essentially overwrite the base class defined method with functionality with the subclass defined functionality</li>
 			<li><b>Hiding</b> the base class simply allows the subclass to define its own implementation for that method, but does not overwrite the existing implementation if the method is called from as base class reference</li>
+			<li>Whether you override or hide a base class member, you still have access from the derived class</li>
+			<li>In the case of hiding, you would use the base.&lt;HiddenMethod&gt;()</li>
 			<li>See Chapter 10 Exercise - HideVsOverride for more information</li>
+		</ul>
+	</li>
+</ol>
+### Implementing Interfaces
+<ol>
+	<li>It us useful to define implementations in <b>base</b> classes as virtual so that <b>derived</b> classes can replace the implementation, rather than hide it.</li>
+	<li>The thing to remember when using interfaces as your reference variable is that the variable will always use the method implementation of the class that implemented the method</li>
+</ol>
+### Partial Class Definitions
+<ol>
+	<li>By declaring a class to be <b>partial</b> you are splitting the definition of a class across multiple files</li>
+	<li>You can use this to logically group code
+		<ul>
+			<li>One file for functionality (code behind)</li>
+			<li>One file for presentation (designer)</li>
+		</ul>
+	</li>
+	<li>You can also define <b>Partial Methods</b>
+		<ul>
+			<li>These methods are defined in one partial class without a body, and implemented in another partial class</li>
+			<li>Partial methds can be static, but they are always <b>private</b> and have only <b>void</b> return values</li>
+			<li>They cannot use the keywords
+				<ul>
+					<li>virtual</li>
+					<li>abstract</li>
+					<li>override</li>
+					<li>new</li>
+					<li>sealed</li>
+					<li>extern</li>
+				</ul>
+			</li>
+			<li>The reason behind these limitations is that when you compile code that contains a partial method definition without an implementation, the compiler actually removes the method entirely.
+				<ul>
+					<li>It also removes any calls to the method</li>
+				</ul>
+			</li>
 		</ul>
 	</li>
 </ol>
