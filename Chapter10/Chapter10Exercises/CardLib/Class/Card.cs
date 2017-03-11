@@ -8,7 +8,7 @@ namespace CardLib.Class
         /// suit and rank are readonly because they should only be set in the constructor when a new card is created.
         /// You cant change the suit and rank of a card in a deck.
         /// </summary>
-        public readonly Suit suit; 
+        public readonly Suit suit;
         public readonly Rank rank;
 
         public Card(Suit suit, Rank rank)
