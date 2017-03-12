@@ -736,3 +736,50 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
+## Chapter 11: Collections, Comparisons, and Conversions
+### The 3 concepts defined
+<ol>
+	<li><b>Collections: </b> enable you to maintain groups of objcets.
+		<ul>
+			<li>Unlike arrays, collections can include more advanced functionality, such as controlling access to objects they contain</li>
+			<li>Searching and sorting</li>
+		</ul>
+	</li>
+	<li><b>Comparisons: </b> When dealing with objects, you often want to make comparisions between them
+		<ul>
+			<li>Comparisons allow you to compare objects in a number of ways
+				<ul>
+					<li>Opeartor overloading</li>
+					<li>Interface implementation such as <b>IComparable</b> and <b>IComparer</b></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><b>Converstions: </b> In addition to <b>casting</b> a variable, you can also customize your type conversions</li>
+</ol>
+### Collections
+<ol>
+	<li>Collection classes in general are used for maintaining lists of objects, and may expose more functionality than simple arrays</li>
+	<li>Much of this functionality comes through implementing interfaces from <b>System.Collections</b> namespace</li>
+	<li>Serveral interfaces in the <b>System.Collections</b> namespace provide basic collection functionality
+		<ul>
+			<li><b>IEnumerable: </b>Provides the capability to loop through items in a collection</li>
+			<li><b>ICollection: </b>Provides the capability to obtain the number of items in a collection and copy items int a simtple array type
+				<ul>
+					<li>Inherits from IEnumerable</li>
+				</ul>
+			</li>
+			<li><b>IList: </b>Provides a list of items for a collection along with the capabilities for accessing these items, and some other basic capabilities related to lists of items
+				<ul>
+					<li>Inherits from IEnumerable and ICollection</li>
+				</ul>
+			</li>
+			<li><b>IDictionary: </b>Similar to IList, but provides a list of items accessible via a key value, rather than an index
+				<ul>
+					<li>Intherits form IEnumerable and ICollection</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
