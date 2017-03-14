@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayVsCollection", "ArrayVsCollection\ArrayVsCollection.csproj", "{98559B0A-B012-4191-82C7-438773EE819C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronglyTypedCollections", "StronglyTypedCollections\StronglyTypedCollections.csproj", "{6DBCA506-71A0-4FBB-8FDF-EC078C426EAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalLib", "Animals\AnimalLib.csproj", "{0F0875ED-53DB-409F-8E83-41731BA309AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{98559B0A-B012-4191-82C7-438773EE819C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98559B0A-B012-4191-82C7-438773EE819C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98559B0A-B012-4191-82C7-438773EE819C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DBCA506-71A0-4FBB-8FDF-EC078C426EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DBCA506-71A0-4FBB-8FDF-EC078C426EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DBCA506-71A0-4FBB-8FDF-EC078C426EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DBCA506-71A0-4FBB-8FDF-EC078C426EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0875ED-53DB-409F-8E83-41731BA309AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0875ED-53DB-409F-8E83-41731BA309AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0875ED-53DB-409F-8E83-41731BA309AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0875ED-53DB-409F-8E83-41731BA309AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

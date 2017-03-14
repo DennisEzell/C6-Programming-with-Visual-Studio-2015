@@ -1,6 +1,6 @@
 ﻿using static System.Console;
 using System.Collections;
-using ArrayVsCollection.Class;
+using AnimalLib.Class;
 
 namespace ArrayVsCollection
 {

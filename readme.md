@@ -783,3 +783,65 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+### Defining Collections
+<ol>
+	<li>To create your own strongly-typed collection, you can derive your collection from from a class, such as <b>System.Collections.CollectionBase</b>
+		<ul>
+			<li>An abstract class that supplies muc of the implementation of a collection for you</li>
+		</ul>
+	</li>
+	<li>The <b>CollectionBase</b> class exposes the interfaces<b>IEnumerable, ICollection, and IList</b>, but provides only some of the required implementations
+		<ul>
+			<li>Provided are the <b>Clear()</b> and <b>RemoveAt()</b> methods of <b>IList</b></li>
+			<li>Also the <b>Count</b> property of <b>ICollection</b></li>
+		</ul>
+	</li>
+	<li>With the exception of the items listed above, you must implement all other required members
+		<ul>
+			<li>To facilitate this, <b>CollectionBase</b> provides two protected properties that enable access to the stored objects themselves
+				<li><b>List</b> gives you access to the items through an <b>IList</b> interface</li>
+				<li><b>InnerList</b> which is the ArrayList object used to store items</li>
+			</li>
+		</ul>
+	</li>
+	<li>The ability to strongly type our collections means we no longer have to cast our arrays (since the array only works with the types we specify instead of System.Object)
+		<p>
+			public class Animals : CollectionBase<br/>
+			{<br/>
+			&nbsp;&nbsp;public void Add(Animal newAnimal)<br/>
+			&nbsp;&nbsp;{<br/>
+			&nbsp;&nbsp;&nbsp;List.Add(newAnimal);<br/>			
+			&nbsp;&nbsp;}<br/><br/>
+			&nbsp;&nbsp;public void Remove(Animal oldAnimal)<br/>
+			&nbsp;&nbsp;{<br/>
+			&nbsp;&nbsp;&nbsp;List.Remove(oldAnimal);<br/>			
+			&nbsp;&nbsp;}<br/>
+			&nbsp;&nbsp;public Animals(){}<br/>
+			}
+		</p>
+	</li>
+</ol>
+### Indexers
+<ol>
+	<li>An <b>indexer</b> is a special kind of property that you can add to a class to provide array-like access</li>
+	<li>An indexer allows for object retrieval without casting by index</li>
+	<li>An example of an indexer on the Animals coolection:
+		<p>
+		public class Animals : CollectionBase<br/>
+		{<br/>
+		&nbsp;...<br/>
+		&nbsp;public Animal this[int animalIndex]<br/>
+		&nbsp;{<br/>
+		&nbsp;&nbsp;get{ return (Animal)List[animalIndex]; }<br/>
+		&nbsp;&nbsp;set{ List[animalIndex] = value; }<br/>		
+		&nbsp;}<br/>		
+		}
+		</p>
+	</li>
+	<li>The indexer will now allow us to retrieve values from our Animals array in a fashion such as
+		<ul>
+			<li>New retrival method: <b>animalCollection[0].Feed()</b></li>
+			<li>Instead of : <b>((Animal)animalCollection[0]).Feed()</b></li>
+		</ul>
+	</li>
+</ol>

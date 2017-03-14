@@ -1,6 +1,6 @@
 ﻿using static System.Console;
 
-namespace ArrayVsCollection.Class
+namespace AnimalLib.Class
 {
     public class Chicken : Animal
     {
