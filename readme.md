@@ -21,6 +21,7 @@ Repo holding notes and exercises from the book.
 		</ul>		
 	</li>
 </ol>
+
 ### Writing Applications Using the .NET Framework
 <ol>
 	<li>In order for C# code to execute, it must be converted into a langauge that the target operating system understands, known as <b>native code</b></li>
@@ -50,6 +51,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>	
 </ol>
+
 ### Assemblies
 <ol>
 	<li>When you compile and application, the CIL code is stored in an <b>assembly</b>
@@ -73,6 +75,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>		
 </ol>
+
 ### Managed Code
 <ol>
 	<li>Code written using the .NET Framework is <b>managed</b> when it is executed
@@ -82,6 +85,7 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>This means that the CLR looks after your applications by managing memory, handling security, allowing cross-language debugging, and so on</li>
 </ol>
+
 ### Linking
 <ol>
 	<li>It is possible to split application code across multiple source code files, which are then compiled together into a single assembly.</li>
@@ -92,6 +96,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>	
 </ol>
+
 ### Applications You Can Write with C#
 <ol>
 	<li><b>Desktop applications</b>
@@ -140,6 +145,7 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>To see the <b>Server Tab</b>, click <b>View</b> --> <b>Server Explorer</b></li>
 </ol>
+
 ### Desktop Applications
 <ol>
 	<li>When building desktop applications, we use Visual Studio's interface building blocks(known as <b>controls</b>)
@@ -169,6 +175,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Simple Types
 <ol>
 	<li>The <b>u</b> character before some variable names are shorthand for <b>unsigned</b>
@@ -177,6 +184,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Literal Types
 <ol>
 	<li>You can specify strings as <b>verbatim</b>
@@ -207,6 +215,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Namespaces
 <ol>
 	<li>C#6 has introduced the <b>using static</b> keyword
@@ -269,6 +278,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Explicit Conversions
 <ol>
 	<li><b>Overflow</b>
@@ -295,6 +305,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### String Manipulation
 <ol>
 	<li>A <b>String</b> type variable can be treated as a read-only array of <b>char</b> variables
@@ -333,6 +344,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Parameter Arrays
 <ol>
 	<li>C# enables you to specify one (and only one) special parameter for a function.</li>
@@ -340,11 +352,13 @@ Repo holding notes and exercises from the book.
 	<li>Parameter arrays enable you to call functions using a variable amount of parameters, and they are defined using the <b>params</b> keyword</li>
 	<li>Similar to Java's <b>varargs</b> parameter</li>
 </ol>
+
 ### Pass by Reference
 <ol>
 	<li>In C#, if you pass a primitive variable as an argument to a function, you pass it by value. Meaning any modification done to the value does not affect the variable's value in the scope from which the call was made.</li>
 	<li>If you want to pass a variable explicitly by reference, you have to specify using the <b>ref</b> keyword before the parameter.</li>
 </ol>
+
 ### Out Parameter
 <ol>
 	<li>You can specify that a given parameter is an <b>out parameter</b> by using the keyword <b>out</b></li>
@@ -356,6 +370,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Delegates
 <ol>
 	<li><b>Delegates</b> are types that enable you to store reference to functions
@@ -420,6 +435,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Static Constructors
 <ol>
 	<li>When using static members in a class, you might want to intialize these members beforehand.</li>
@@ -438,6 +454,7 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>No matter how many instances of a class are created, the static constructor will be called only once.</li>
 </ol>
+
 ### Interfaces
 <ol>
 	<li>When interfaces need to change, you should create a new interface that <b>extends</b> the old one
@@ -447,6 +464,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Disposable Objects
 <ol>
 	<li>If an object implements the <b>IDisposable</b> interface and implements the <b>Dispose()</b> method, then this object will free up any system resources just before it goes out of scope</li>
@@ -462,6 +480,7 @@ Repo holding notes and exercises from the book.
 	</li>	
 	<li>After the <b>using</b> block executes, then the Class will call its Dispose() method to free up resources</li>
 </ol>
+
 ### Inheritance
 <ol>
 	<li>When using inheritance from a base class, the question of member accessibility becomes an important one
@@ -481,6 +500,7 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>A class may also be <b>sealed</b>, which means it cannot be used as a base class.</li>
 </ol>
+
 ### Polymorphism
 <ol>
 	<li>Polymorphism allows us to use variable types to refer to base/derived class instances</li>
@@ -497,6 +517,7 @@ Repo holding notes and exercises from the book.
 		</p>
 	</li>
 </ol>
+
 ### Relationships Between Objects
 <ol>
 	<li><b>Containment</b>
@@ -525,6 +546,7 @@ Repo holding notes and exercises from the book.
 	<li>By default, classes are declared as <b>internal</b>, meaning only code in the current project will have access to it.</li>
 	<li>If a base class is specified, it must be the first thing after the colon, with interfaces specifed afterwards.</li>
 </ol>
+
 ### Constructor Execution Sequence
 <ol>
 	<li>Consider the following class structures
@@ -634,6 +656,7 @@ Repo holding notes and exercises from the book.
 		</li>
 	</li>
 </ol>
+
 ### Class vs Structs
 <ol>
 	<li>Structs are value types</li>
@@ -652,6 +675,7 @@ Repo holding notes and exercises from the book.
 	<li>Fields can use the keyword <b>readonly</b></li>
 	<li>This means the field can be assigned a value <b>only</b> during constructor execution or by initial assignment</li>
 </ol>
+
 ### Defining Methods
 <ol>
 	<li>Methods are also defined using PascalCasing</li>
@@ -664,6 +688,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Defining Properties
 <ol>
 	<li>C#6 introduced a new feature called <b>expression based properties</b>
@@ -675,6 +700,7 @@ Repo holding notes and exercises from the book.
 		</p>
 	</li>
 </ol>
+
 ### Automatic Properties
 <ol>
 	<li>An automatic property is declared with a simplified syntax and the C# compiler fills in the blaks for you
@@ -684,6 +710,7 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>You can create an automatic property in Visual Studio by typing <b>'prop'</b> and then prest <b>TAB twice</b></li>
 </ol>
+
 ### Hidden and Overridden Methods
 <ol>
 	<li>When you inherit a non-abstract method from a base class, you also inherit an implementation.</li>
@@ -700,11 +727,13 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Implementing Interfaces
 <ol>
 	<li>It us useful to define implementations in <b>base</b> classes as virtual so that <b>derived</b> classes can replace the implementation, rather than hide it.</li>
 	<li>The thing to remember when using interfaces as your reference variable is that the variable will always use the method implementation of the class that implemented the method</li>
 </ol>
+
 ### Partial Class Definitions
 <ol>
 	<li>By declaring a class to be <b>partial</b> you are splitting the definition of a class across multiple files</li>
@@ -738,6 +767,7 @@ Repo holding notes and exercises from the book.
 </ol>
 
 ## Chapter 11: Collections, Comparisons, and Conversions
+
 ### The 3 concepts defined
 <ol>
 	<li><b>Collections: </b> enable you to maintain groups of objcets.
@@ -758,6 +788,7 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li><b>Converstions: </b> In addition to <b>casting</b> a variable, you can also customize your type conversions</li>
 </ol>
+
 ### Collections
 <ol>
 	<li>Collection classes in general are used for maintaining lists of objects, and may expose more functionality than simple arrays</li>
@@ -783,6 +814,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Defining Collections
 <ol>
 	<li>To create your own strongly-typed collection, you can derive your collection from from a class, such as <b>System.Collections.CollectionBase</b>
@@ -821,6 +853,7 @@ Repo holding notes and exercises from the book.
 		</p>
 	</li>
 </ol>
+
 ### Indexers
 <ol>
 	<li>An <b>indexer</b> is a special kind of property that you can add to a class to provide array-like access</li>
@@ -845,6 +878,7 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
 ### Keyed Collections and IDictionary
 <ol>
 	<li><b>DictionaryBase</b>, like CollectionsBase, implements some (but not all) of the members obtained through its supported interfaces</li>
@@ -887,6 +921,7 @@ Repo holding notes and exercises from the book.
 		</p>
 	</li>
 </ol>
+
 ### Iterators
 <ol>
 	<li>An <b>iterator</b> is a block of code that supplies all the values to be used in a foreach block in sequence</li>
