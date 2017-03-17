@@ -21,6 +21,7 @@ Repo holding notes and exercises from the book.
 		</ul>		
 	</li>
 </ol>
+
 ### Writing Applications Using the .NET Framework
 <ol>
 	<li>In order for C# code to execute, it must be converted into a langauge that the target operating system understands, known as <b>native code</b></li>
