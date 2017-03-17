@@ -845,3 +845,57 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+### Keyed Collections and IDictionary
+<ol>
+	<li><b>DictionaryBase</b>, like CollectionsBase, implements some (but not all) of the members obtained through its supported interfaces</li>
+	<li>Like CollectionBase, the <b>Clear</b> and <b>Count</b> members are implented, although <b>RemoveAt()</b> isnt because it is a method on the IList interface
+		<ul>
+			<li>IDictionary does, however, have a <b>Remove()</b> method, which is one of the methods you should implement in a custom collection class based on <b>DictionaryBase</b></li>
+		</ul>
+	</li>
+	<li>The key differences between dealing with IDictionary vs IList Collectiosn
+		<ul>
+			<li><b>Add()</b>
+				<ul>
+					<li>Takes two parameters, a key and a value</li>
+					<li>The dictionary collection has a member alled <b>Dictionary</b> inherited from <b>DictionaryBase</b> which is on the <b>IDictionary</b> inteface</li>
+					<li>This interface has its own <b>Add()</b> method, which takes two object parameters</li>
+					<li>Your implementation takes a string value as a key and a <b>&lt;ObjectType&gt;</b> as the data to store alongside this key</li>
+				</ul>
+			</li>
+			<li><b>Remove()</b>
+				<ul>
+					<li>Takes a key parameter, rather then an object reference</li>
+					<li>The item with the key value specified is removed</li>
+				</ul>
+			</li>
+			<li><b>INdexer</b>
+				<ul>
+					<li>Uses a strink key value, rather than an index, which is used to access the stored item via the <b>Dictionary</b> inherited memeber</li>
+					<li>Again, casting is necessary here</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>You can use a <b>foreach</b> loop which, for each iteration, will return a derived class of <b>DictionaryEntry</b> structs
+		<p>
+		foreach(DictionaryEntry entry in animalCollection)<br/>
+		&nbsp;{<br/>
+		&nbsp;&nbsp;WriteLine($"New {entry.Value.ToString()} object added to "+<br/>
+		&nbsp;&nbsp;&nbsp;$"custom collection, Name = {((Animal)entry.Value).Name}");<br/>		
+		&nbsp;}
+		</p>
+	</li>
+</ol>
+### Iterators
+<ol>
+	<li>An <b>iterator</b> is a block of code that supplies all the values to be used in a foreach block in sequence</li>
+	<li>To iterate over a class, use a method called <b>GetEnumerator()</b> with a return type of <b>IEnumerator</b></li>
+	<li>To iterate over a class memeber, such as a method, use <b>IEnumberable</b></li>
+	<li>Within an interator block, you select the values to be used in the foreach loop by using the <b>yield</b> keyword
+		<p>
+			yield return &lt;value&gt;
+		</p>
+	</li>
+	<li>See Chapter 11 Exercise: Iterators</li>
+</ol>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronglyTypedCollections", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalLib", "Animals\AnimalLib.csproj", "{0F0875ED-53DB-409F-8E83-41731BA309AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterators", "Iterators\Iterators.csproj", "{8E10EB95-EC6A-4960-9941-C4746804C3B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0F0875ED-53DB-409F-8E83-41731BA309AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F0875ED-53DB-409F-8E83-41731BA309AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F0875ED-53DB-409F-8E83-41731BA309AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E10EB95-EC6A-4960-9941-C4746804C3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E10EB95-EC6A-4960-9941-C4746804C3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E10EB95-EC6A-4960-9941-C4746804C3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E10EB95-EC6A-4960-9941-C4746804C3B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
