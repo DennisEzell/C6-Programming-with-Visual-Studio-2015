@@ -10,7 +10,7 @@ namespace StronglyTypedCollections
     {
         static void Main(string[] args)
         {
-            Animals animalCollection = new Animals();
+            AnimalsList animalCollection = new AnimalsList();
             animalCollection.Add(new Cow("Donna"));
             animalCollection.Add(new Chicken("Kevin"));
 

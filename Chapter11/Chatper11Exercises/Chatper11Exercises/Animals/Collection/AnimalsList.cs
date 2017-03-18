@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace AnimalLib.Collection
 {
-    public class Animals : CollectionBase
+    public class AnimalsList : CollectionBase
     {
         /// <summary>
         /// Add method

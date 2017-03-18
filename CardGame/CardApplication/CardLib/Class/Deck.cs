@@ -4,7 +4,7 @@ using System;
 
 namespace CardLib.Class
 {
-    public class Deck
+    public class Deck : ICloneable
     {
         /// <summary>
         /// Fields
@@ -23,6 +23,16 @@ namespace CardLib.Class
                     cards.Add(new Card((Suit)suitVal, (Rank)rankVal));
                 }
             }
+        }
+
+        /// <summary>
+        /// Single Arg constructor used when cloning a Deck.
+        /// See Clone() method below
+        /// </summary>
+        /// <param name="newCards"></param>
+        public Deck(Cards newCards)
+        {
+            cards = newCards;
         }
 
 
@@ -69,5 +79,13 @@ namespace CardLib.Class
             }
             newDeck.CopyTo(cards);
         }
+
+        /// <summary>
+        /// Clone method to return a new deck of cards with a new Cards collection.
+        /// See the Cards.Clone() method for details on how this is a Deep Copy
+        /// instead of a Shallow Copy.
+        /// </summary>
+        /// <returns></returns>
+        public object Clone() => new Deck(cards.Clone() as Cards);
     }
 }

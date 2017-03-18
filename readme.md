@@ -932,3 +932,20 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>See Chapter 11 Exercise: Iterators</li>
 </ol>
+
+### Deep Copying
+<ol>
+	<li>The <b>System.Object.MemberwiseClone()</b> will copy one objects fields into another
+		<ul>
+			<li>But if those fields are objects it just copies the reference of the object</li>
+			<li>This is known as a <b>Shallow copy</b></li>
+		</ul>
+	</li>
+	<li>A <b>Deep Copy</b> makes a full copy of an object without maintaining the same object field references
+		<ul>
+			<li>The standard .NET Framework way of doing this is to implement the <b>IClonable</b> interface which has a singel method <b>Clone()</b></li>
+			<li><b>Clone()</b> takes no parameters and returns an <b>object</b> type result.</li>
+			<b>The CardApplication exercise has had the Deep Copy functionality added to it via the Clone() methods on Deck.cs and Card.cs</b>
+		</ul>
+	</li>
+</ol>

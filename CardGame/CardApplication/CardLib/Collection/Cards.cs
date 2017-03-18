@@ -1,9 +1,10 @@
 ﻿using CardLib.Class;
+using System;
 using System.Collections;
 
 namespace CardLib.Collection
 {
-    public class Cards : CollectionBase
+    public class Cards : CollectionBase, ICloneable
     {
         public void Add(Card card)
         {
@@ -41,5 +42,22 @@ namespace CardLib.Collection
         /// <param name="card"></param>
         /// <returns></returns>
         public bool ContainsCard(Card card) => InnerList.Contains(card);
+
+        /// <summary>
+        /// Have to provide more implementation than just MemberwiseClone() since
+        /// we are dealing with Card objects and do not want shallow copy references 
+        /// in the returned new Cards object
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            Cards newCards = new Cards();
+            foreach (Card card in List)
+            {
+                newCards.Add(new Card(card.suit, card.rank));                
+            }
+
+            return newCards;
+        }
     }
 }
