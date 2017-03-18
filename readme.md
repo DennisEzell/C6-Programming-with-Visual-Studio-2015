@@ -945,7 +945,7 @@ Repo holding notes and exercises from the book.
 		<ul>
 			<li>The standard .NET Framework way of doing this is to implement the <b>IClonable</b> interface which has a singel method <b>Clone()</b></li>
 			<li><b>Clone()</b> takes no parameters and returns an <b>object</b> type result.</li>
-			<b>The CardApplication exercise has had the Deep Copy functionality added to it via the Clone() methods on Deck.cs and Card.cs</b>
+			<li>The CardApplication exercise has had the Deep Copy functionality added to it via the Clone() methods on Deck.cs and Card.cs</li>
 		</ul>
 	</li>
 </ol>
