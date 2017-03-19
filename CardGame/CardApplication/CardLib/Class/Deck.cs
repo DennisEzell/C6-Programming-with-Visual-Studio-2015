@@ -35,6 +35,33 @@ namespace CardLib.Class
             cards = newCards;
         }
 
+        /// <summary>
+        /// Nondefault constructor. Allows aces to be set high
+        /// </summary>
+        /// <param name="isAceHigh"></param>
+        public Deck(bool isAceHigh) : this()
+        {
+            Card.isAceHigh = isAceHigh;
+        }
+
+        /// <summary>
+        /// Nondefault constructor. Allows trumps to be set
+        /// </summary>
+        /// <param name="usesTrumps"></param>
+        /// <param name="trump"></param>
+        public Deck(bool useTrumps, Suit trump) : this()
+        {
+            Card.usesTrumps = useTrumps;
+            Card.trump = trump;
+        }
+
+        public Deck(bool isAceHigh, bool useTrumps, Suit trump): this()
+        {
+            Card.isAceHigh = isAceHigh;
+            Card.usesTrumps = useTrumps;
+            Card.trump = trump;
+        }
+
 
         /// <summary>
         /// Retrieves the card at teh specified index

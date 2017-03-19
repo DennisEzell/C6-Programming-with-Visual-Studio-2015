@@ -949,3 +949,67 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
+### The <b>is</b> Operator
+<ol>
+	<li>Despite its name, the <b>is</b> operator isnt a way to determine whether an object is a certain type</li>
+	<li>Instead, it enables you to check whether an object either is or <b>can be converted into</b> a given type</li>
+	<li>Syntax:
+		<p>
+			&lt;operand&gt; is &lt;type&gt;
+		</p>
+	</li>
+	<li>The possible results of this expression are:
+		<ul>
+			<li>If &lt;type&gt; is a class type, then the result is <b>true</b> if &lt;operand&gt; is of that type, if it inherits from that type, or if it can be boxed into that type</li>
+			<li>If &lt;type&gt; is an interface type, then the result is <b>true</b> if &lt;operand&gt; is of that type or it is a type type that implements that interface</li>
+			<li>If &lt;type&gt; is a value type, then the result is <b>true</b> if &lt;operand&gt; is of that type or it is a type that can be unboxed into that type</li>
+			<li>See Chapter 11 Exercies IsOpertor</li>
+		</ul>
+	</li>
+</ol>
+
+### Operator Overloading
+<ol>
+	<li><b>Operator Overloading</b> enables you to use standard operators, such as +, >, and so on, with classes that you design.</li>
+	<li>This is useful because you can perform whatever processing you want in the implementation of the overloaded operator</li>
+	<li>Below is an example of a class overloading the <b>+</b> operator
+		<p>
+			public class AddClass1<br/>
+			&nbsp;{<br/>
+			&nbsp;&nbsp;public int val;<br/>
+			&nbsp;&nbsp;public static AddClass1 operator +(AddClass1 op1, AddClass1 op2)<br/>
+			&nbsp;&nbsp;{<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;AddClass1 returnVal = new AddClas1();<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;returnVal.val = op1.val + op2.val;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;return returnVal;
+			&nbsp;&nbsp;}<br/>
+			&nbsp;}
+		</p>
+	</li>
+	<li>The following operators can be overloaded
+		<ul>
+			<li><b>Unary Operators</b>
+				<ul>
+					<li>+  -  !  ~  ++  --  true  false</li>
+				</ul>
+			</li>
+			<li><b>Binary Operators</b>
+				<ul>
+					<li>+  -  *  /  %  &  |  ^  &lt;&lt;  &gt;&gt;</li>
+				</ul>
+			</li>
+			<li>Comparison operators
+				<ul>
+					<li>==  !=  &lt;  &gt;  &lt;=  &gt;=</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>If you overload the <b>true</b> and <b>false</b> operators, then you can use classes in Boolean expressions
+		<ul>
+			<li>Suc as <b>if(op1){}</b></li>
+		</ul>
+	</li>
+	<li>Check out the Card Application project to see how Operator Overloading is implemented</li>
+</ol>

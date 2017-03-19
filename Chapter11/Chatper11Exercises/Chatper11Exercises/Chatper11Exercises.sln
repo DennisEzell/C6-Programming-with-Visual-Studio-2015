@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterators", "Iterators\Iter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementIterator", "ImplementIterator\ImplementIterator.csproj", "{B21F50A3-8853-43D4-8CD7-C8C26C15FFF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsOperator", "IsOperator\IsOperator.csproj", "{49F20C9A-5866-4DEF-A5E6-92ED1C88FACA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B21F50A3-8853-43D4-8CD7-C8C26C15FFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B21F50A3-8853-43D4-8CD7-C8C26C15FFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B21F50A3-8853-43D4-8CD7-C8C26C15FFF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F20C9A-5866-4DEF-A5E6-92ED1C88FACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F20C9A-5866-4DEF-A5E6-92ED1C88FACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F20C9A-5866-4DEF-A5E6-92ED1C88FACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F20C9A-5866-4DEF-A5E6-92ED1C88FACA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
