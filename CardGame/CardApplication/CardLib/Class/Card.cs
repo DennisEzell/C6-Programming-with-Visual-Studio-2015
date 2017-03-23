@@ -67,7 +67,66 @@ namespace CardLib.Class
         public override bool Equals(object card) => this == (card as Card);
 
         public override int GetHashCode() => 13 * (int)rank + (int)suit;
+        
+        public static bool operator > (Card card1, Card card2)
+        {
+            if (card1.suit == card2.suit)
+            {
+                if (isAceHigh)
+                {
+                    if (card1.rank == Rank.Ace)
+                    {
+                        return !(card2.rank == Rank.Ace);//If card1 is an Ace but not card2
+                    }//End card1 == Ace
+                    else
+                    {
+                        return (card2.rank == Rank.Ace)
+                            ? false  //Neither car is an ace
+                            : (card1.rank > card2?.rank);//If card1 & card2 are not aces, directly compare ranks since aces arent an issue
 
-        //TODO: Create > operator 
+                    }
+                }//End isAceHigh
+                else
+                {
+                    return (card1.rank > card2?.rank);//Aces arent high, so just compare the ranks
+                }
+            }//End cards are the same suit
+            else
+            {
+                return !(usesTrumps && (card2.suit == Card.trump));//Must not be playing poker???                
+            }
+        }
+
+        public static bool operator < (Card card1, Card card2) => !(card1 >= card2);
+
+        public static bool operator >=(Card card1, Card card2)
+        {
+            if (card1.suit == card2.suit)
+            {
+                if (isAceHigh)
+                {
+                    if(card1.rank == Rank.Ace)
+                    {
+                        return true;
+                    }//end card1 is an ace
+                    else
+                    {
+                        return (card2.rank == Rank.Ace)
+                            ? false
+                            : (card1.rank >= card2.rank);
+                    }
+                }//end isAceHigh
+                else
+                {
+                    return (card1.rank >= card2.rank);
+                }
+            }
+            else
+            {
+                return !(usesTrumps && (card2.suit == Card.trump));
+            }
+        }
+
+        public static bool operator <= (Card card1, Card card2) => !(card1 >  card2);
     }
 }
