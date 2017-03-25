@@ -1013,3 +1013,76 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>Check out the Card Application project to see how Operator Overloading is implemented</li>
 </ol>
+
+### IComparable and IComparer Interfaces
+<ol>
+	<li>The <b>IComparable</b> and <b>IComparer</b> interfaces are the standard way to compare objects in the .NET Framework
+		<ul>
+			<li><b>IComparable:</b> is implemented in the class of the object to be compared and allows comparison between thta object and another object
+				<ul>
+					<li>Exposes a single method <b>CompareTo()</b>, which accepts an object</li>
+				</ul>
+			</li>			
+			<li><b>IComparer:</b> is implemented in a seperated class, which allows comparisons between any two objects
+				<ul>
+					<li>Exposes the single method <b>Compare()</b>, which accepts two objects and returns an integer just like <b>CompareTo()</b></li>
+				</ul>
+			</li>
+			<li>In both cases, the parameters supplied to the methods are of the type <b>System.Object</b></li>
+			<li>Objects passed to <b>Comparer.Compare()</b> are checked to determine whether they support IComparable. If they do, then that implementation is used</li>
+			<li>Null values are allowed, and are interpreted as being "less than" any other object</li>
+			<li>Strings are processed according to current culture</li>
+			<li>Strings are processed in a case-sensitive way, to make it non-case-sensitive use <b>CaseInsenitiveComparer</b></li>
+		</ul>
+	</li>
+	<li>Note that some classes in the System.Collections namespace, including <b>CollectionBase</b>, dont expose a method for sorting.
+		<ul>
+			<li>If you want to sort a collection you have derived from this class, then you have to do a bit more work (See Chapter 11 exercise SortList)</li>
+		</ul>
+	</li>
+</ol>
+
+### Overloading Conversion Operators
+<ol>
+	<li>You can define both <b>implicit</b> and <b>explicit</b> conversions between types</li>
+	<li>This is necessary if you want to convert between types that arent related - if there is no inheritance relationship between them and no shared interfaces</li>
+	<li>Suppose you want to define implicit conversion between ConvClass1 and ConvClass2
+		<p>
+		&nbsp;&nbsp;ConvClass1 op1 = new ConvClass1()<br/>
+		&nbsp;&nbsp;ConvClass2 op2 = op1
+		</p>
+	</li>
+	<li>You could alos define an explicit conversion
+		<p>
+		&nbsp;&nbsp;ConvClass1 op1 = new ConvClass1();<br/>
+		&nbsp;&nbsp;ConvClass2 op2 = (ConvClass2)op1
+		</p>
+	</li>
+	<li>Below illustrates the code behind both the implicit and explicit conversions
+		<p>
+		public class ConvClass1<br/>
+		&nbsp;{<br/>
+		&nbsp;&nbsp;public int val;<br/>
+		&nbsp;&nbsp;public static <b>implicit</b> operator ConvClass2(ConvClass1 op1)<br/>
+		&nbsp;&nbsp;&nbsp;{<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;ConvClass2 returnVal = new ConvClass2();<br/>		
+		&nbsp;&nbsp;&nbsp;&nbsp;returnVal.val = (int)op1.val;<br/>		
+		&nbsp;&nbsp;&nbsp;&nbsp;return returnVal;<br/>		
+		&nbsp;&nbsp;&nbsp;}<br/>		
+		}
+		</p>
+		<br/>
+		<p>
+		public class ConvClass2<br/>
+		&nbsp;{<br/>
+		&nbsp;&nbsp;public int val;<br/>
+		&nbsp;&nbsp;public static <b>explicit</b> operator ConvClass1(ConvClass2 op1)<br/>
+		&nbsp;&nbsp;&nbsp;{<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;ConvClass1 returnVal = new ConvClass1();<br/>		
+		&nbsp;&nbsp;&nbsp;&nbsp;checked{ returnVal.val = (int)op1.val;}<br/>		
+		&nbsp;&nbsp;&nbsp;&nbsp;return returnVal;<br/>		
+		&nbsp;&nbsp;&nbsp;}<br/>		
+		}		
+		</p>
+	</li>
+</ol>
