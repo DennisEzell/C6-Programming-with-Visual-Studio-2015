@@ -1086,3 +1086,19 @@ Repo holding notes and exercises from the book.
 		</p>
 	</li>
 </ol>
+
+### The <b>as</b> operator
+<ol>
+	<li>The <b>as</b> operator converts a type into a specified reference type</li>
+	<p>
+		&lt;operand&gt; <b>as</b> &lt;type&gt;
+	</p>
+	<li>Possible applications of the <b>as</b> operator:
+		<ul>
+			<li>If &lt;operand&gt; is of type &lt;type&gt;</li>
+			<li>If &lt;operand&gt; can be implicitly converted to type &lt;type&gt;</li>
+			<li>If &lt;operand&gt; can be boxed into type &lt;type&gt;</li>
+		</ul>
+	</li>
+	<li>If no conversion form &lt;operand&gt; to &lt;type&gt; is possible, then the result of the expression will be <b>null</b></li>
+</ol>
