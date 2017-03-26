@@ -1102,3 +1102,117 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>If no conversion form &lt;operand&gt; to &lt;type&gt; is possible, then the result of the expression will be <b>null</b></li>
 </ol>
+
+## Generics
+
+### What are Generics?
+<ol>
+	<li>To best illustrate, recall the collections classes from previous chapters
+		<ul>
+			<li>Basic collections can be contained in classes such as <b>ArrayList</b>, but that such collections suffer from being <b>untyped</b></li>
+			<li>This requires that you cast <b>object</b> items into whatever type of object you actually stored in the collection</li>
+			<li>Because anything that inherits for <b>System.Object</b> (which is practically everything) can be stored in the ArrayList</li>
+			<li>Assuming that certain types are all that is contained in a collection can lead to the exceptions being throw, and code logic breaking down</li>
+		</ul>
+	</li>
+	<li>The next best alternative to using untyped Collections was for us to define our own strongly typed collection class
+		<ul>
+			<li>We did this by deriving our Collection class from <b>CollectionBase</b> and providing our own methods for adding, removing, and indexers</li>
+			<li>This is where we encountered the problem that everytime we create a new class that needs to be held in a collection, we had to do one of the following:
+				<ul>
+					<li>Use a collection class you have already made that can contain items of the new type</li>
+					<li>Create a new collection class that can hold items of the new type, implementing all the required methods</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><b>Generic Classes</b> make coding a lot simpler
+		<li>A generic class is built around whatever type, or types, you supply during <b>instantiation</b>, enabling you to strongly type an object with hardly any effort at all</li>
+		<li>In the context of collections, creating a "collection of type <b>T</b> objects" is as simple as providing the type in the parameter tag &lt;&gt; of the collection type
+			<p>
+				CollectionClass<b>&lt;ItemClass&gt;</b> items = new CollectionClass&lt;ItemClass&gt;();<br/>				
+				items.Add(new ItemClass());
+			</p>
+		</li>
+	</li>
+	<li>A side note on Generics in C#
+		<ul>
+			<li>Usuallyu, when you create a class, it is compiled into a type that you can the use in your code</li>
+			<li>This is not the case for a generic class, as they are resolved at runtime</li>
+			<li>The .NET runtime allows generic classes to be dynamically generated as and when you need them</li>
+			<li>A give generic class <b>A</b> of <b>B</b> wont exist until you ask for it by instantiating it</li>
+			<li>Key difference from Java's <b>type erasure</b></li>
+		</ul>
+	</li>
+</ol>
+
+### NUllable Types
+<ol>
+	<li>This generic type allows us to get around a minor issue with value types</li>
+	<li>One of the ways in which <b>value</b> types differ from <b>reference</b> types is that they must contain a value</li>
+	<li>This is where generics gives you the ability to have nullable value types
+		<ul>
+			<li><b>System.Nullable&lt;int&gt; nullableInt</b></li>
+		</ul>
+	</li>
+	<li>Nullable types allow variables that would otherwise be vlaue types, to be null</li>
+	<li>An alternative syntax for declaring a value type as nullable:
+		<ul>
+			<li><b>int? nullableInt</b></li>
+		</ul>
+	</li>
+	<li>What happens when one or both values in an operator evaluation that involves two nullable value are <b>null</b>?
+		<ul>
+			<li>The answer is for all simple nullable tyeps other than <b>bool?</b>, the result of the operation is <b>null</b></li>
+			<li>Which can be interpreted as "unable to compare"</li>
+		</ul>
+	</li>
+	<li>Since Nullables are basically wrappers for value types, you can access the underlying value of a Nullable by using <b>Nullable.Value</b> property</li>
+</ol>
+
+### The ?? operator
+<ol>
+	<li>The <b>??</b> operator, known as the <b>null coalescing opertor</b>
+		<ul>
+			<li>A binary operator that enables you to supply an alternative value to use for expressions that might evaluate into null</li>
+			<li>The following statements are functionally equivalent:
+				<p>
+					op1 ?? op2<br/>
+					op1 == null ? op2 : op1
+				</p>
+			</li>
+			<li>This means you use the <b>??</b> operator to provide default values to use if a nullable type is null
+				<p>
+					int? op1 = null;<br/>
+					int result = op1 * 2 ?? 5;
+				</p>
+				<ul>
+					<li>result will have the value of <b>5</b> since the evaluation of op1 * 2 results in null.</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
+
+### The ?. Operator
+<ol>
+	<li>Known as the <b>Elvis operator</b> or the <b>null condition operator</b></li>
+	<li>Helps to overcome code ambiguity by burdensome null checking</li>
+	<li>It checks the type for value and assigns it null if one is not present</li>
+	<li>Example:
+		<p>
+			int? count = customers.orders?.Count()
+		</p>
+		<ul>
+			<li>Using the <b>?.</b> operator results in int? count being set to null when there are no orders for the customer</li>
+		</ul>
+	</li>
+	<li>We can also define default values if we combine the ?. with the ??
+		<p>
+			int? count = customer.orders?.Count() ?? 0;
+		</p>
+		<ul>
+			<li>Sets count to 0 if there are no orders for the customer</li>
+		</ul>
+	</li>
+</ol>
