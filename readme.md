@@ -784,7 +784,7 @@ Repo holding notes and exercises from the book.
 			</li>
 		</ul>
 	</li>
-	<li><b>Converstions: </b> In addition to <b>casting</b> a variable, you can also customize your type conversions</li>
+	<li><b>Conversions: </b> In addition to <b>casting</b> a variable, you can also customize your type conversions</li>
 </ol>
 
 ### Collections
@@ -1146,7 +1146,7 @@ Repo holding notes and exercises from the book.
 	</li>
 </ol>
 
-### NUllable Types
+### Nullable Types
 <ol>
 	<li>This generic type allows us to get around a minor issue with value types</li>
 	<li>One of the ways in which <b>value</b> types differ from <b>reference</b> types is that they must contain a value</li>
