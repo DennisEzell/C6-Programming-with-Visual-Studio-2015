@@ -1216,3 +1216,33 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
+### Generic List (List&lt;T&gt;)
+<ol>
+	<li>Rather than derive a class from <b>CollectionBase</b> and implement the required methods, it can be quicker and easier simply to use the <b>List&lt;T&gt;</b> generic collection type</li>
+	<li>An added bonus here is that many of the methods you normally have to implement, such as <b>Add()</b>, are implemented for you.</li>
+	<li>An alternative way to achieve the same as extending collection base is to extend a Generic list of your particular type
+		<ul>
+			<li><b>public class Animals : List&lt;Animal&gt; {}</b></li>
+		</ul>
+	</li>
+	<li>To sort a <b>List&lt;T&gt;</b>, you can supply an <b>IComparable&lt;T&gt;</b> interface on th etype to be sorted, or supply an <b>Icomparer&lt;T&gt;</b>interface</li>
+	<li>Alternatively, you can supply a <b>generic delegate</b> as a sorting method
+		<ul>
+			<li>There are two generic delegate types you can use:
+				<ul>
+					<li><b>Comparison&lt;T&gt;</b>: A delegate type for a method used for sorting, with the following return type and parameters
+						<p>
+							int method (T objectA, T objectB)
+						</p>
+					</li>
+					<li><b>Predicate&lt;T&gt;</b>: A delegate type for a method used for searching, with the following return type and parameters:
+						<p>
+							bool method (T targetObject)
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
