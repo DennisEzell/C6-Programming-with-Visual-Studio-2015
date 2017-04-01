@@ -1246,3 +1246,21 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 </ol>
+
+### Method Group
+<ol>
+	<li>There are many situations in which you can use a <b>method group</b> to implicitly create delegates</li>
+	<li>Consider the following call for leveraging a delegate (See Chapter 12 SearchSortGenericList exercise)
+		<p>
+		&nbsp;&nbsp;Comparison&lt;Vector&gt; sorter = new Comparison&lt;Vector&gt;(VectorDelegate.Compare);<br/>
+		&nbsp;&nbsp;route.Sort(sorter);
+		</p>
+	</li>
+	<li>The above delegate call can be reduced to the below code
+		<p>
+		&nbsp;&nbsp;route.Sort(VectorDelegate.Compare);
+		</p>
+	</li>
+	<li>The reference to VectorDelegate.Compare without the (), is refereed to as a <b>method group</b></li>
+	<li>The <b>Sort()</b> method obviously needs an instance of a comparison interface, but the compiler realizes and creates one for you from the method you supply.</li>
+</ol>

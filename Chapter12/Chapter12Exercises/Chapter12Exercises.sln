@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullableTypes", "NullableTy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericList", "GenericList\GenericList.csproj", "{FEAC5886-2EE7-4883-90B3-C9A2848A6A6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchSortGenericList", "SearchSortGenericList\SearchSortGenericList.csproj", "{210E8A80-AD46-4FF5-B6AC-3B890132F79C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FEAC5886-2EE7-4883-90B3-C9A2848A6A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEAC5886-2EE7-4883-90B3-C9A2848A6A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEAC5886-2EE7-4883-90B3-C9A2848A6A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210E8A80-AD46-4FF5-B6AC-3B890132F79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210E8A80-AD46-4FF5-B6AC-3B890132F79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210E8A80-AD46-4FF5-B6AC-3B890132F79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210E8A80-AD46-4FF5-B6AC-3B890132F79C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
