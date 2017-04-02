@@ -660,6 +660,7 @@ Repo holding notes and exercises from the book.
 	<li>Structs are value types</li>
 	<li>Classes are reference types</li>
 </ol>
+
 ### Shallow Copy vs Deep Copy
 <ol>
 	<li>The <b>IClonable</b> interface enables you to deep copy by implementing its <b>Clone()</b> method</li>
@@ -1273,7 +1274,7 @@ Repo holding notes and exercises from the book.
 		&nbsp;&nbsp;var names = new Dictionary&lt;int, string&gt;<br/>
 		&nbsp;&nbsp;{<br/>
 		&nbsp;&nbsp;&nbsp;[1] = "Dennnis",<br/>
-		&nbsp;&nbsp;&nbsp;[2] = "Daniel"
+		&nbsp;&nbsp;&nbsp;[2] = "Daniel"<br/>		
 		&nbsp;&nbsp;}
 		</p>
 	</li>
@@ -1296,7 +1297,7 @@ Repo holding notes and exercises from the book.
 		<p>
 		&nbsp;&nbsp;public MyGenericClass()<br/>
 		&nbsp;&nbsp;&nbsp;{<br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerT1Object = default(T1);
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerT1Object = default(T1);<br/>		
 		&nbsp;&nbsp;&nbsp;}
 		</p>
 	</li>
