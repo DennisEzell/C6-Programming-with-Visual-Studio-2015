@@ -1264,3 +1264,59 @@ Repo holding notes and exercises from the book.
 	<li>The reference to VectorDelegate.Compare without the (), is refereed to as a <b>method group</b></li>
 	<li>The <b>Sort()</b> method obviously needs an instance of a comparison interface, but the compiler realizes and creates one for you from the method you supply.</li>
 </ol>
+
+### Index Initializers
+<ol>
+	<li>A new feature inttroduced in C#6 is <b>index initializers</b></li>
+	<li>This concept allows initialization of indices inside the object initializer
+		<p>
+		&nbsp;&nbsp;var names = new Dictionary&lt;int, string&gt;<br/>
+		&nbsp;&nbsp;{<br/>
+		&nbsp;&nbsp;&nbsp;[1] = "Dennnis",<br/>
+		&nbsp;&nbsp;&nbsp;[2] = "Daniel"
+		&nbsp;&nbsp;}
+		</p>
+	</li>
+	<li>You can also use index intializers in <b>expression-bodied methods</b>
+		<p>
+		&nbsp;public Dictionary&lt;int, string&gt; GetNames() => new Dictionary&lt;int, string&gt; { [1] = "Dennis", [2] = "Daniel"};
+		</p>
+	</li>
+</ol>
+
+### <b>default</b> Keyword
+<ol>
+	<li>When creating generic classes, you do not know what types are being used to create the generic instances
+		<ul>
+			<li>Could be value types (cant be assigned <b>null</b>)</li>
+			<li>Could be reference types</li>
+		</ul>
+	</li>
+	<li>By using the <b>default</b> keyword, you can assign a null value if the type is a reference type, or a default value if it is a value type
+		<p>
+		&nbsp;&nbsp;public MyGenericClass()<br/>
+		&nbsp;&nbsp;&nbsp;{<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerT1Object = default(T1);
+		&nbsp;&nbsp;&nbsp;}
+		</p>
+	</li>
+</ol>
+
+### Constraining Types
+<ol>
+	<li>Generic types in which no restrictions are placed upon the types they can used are known s <b>unbounded</b>
+		<ul>
+			<li>You can only make the assumption that your types either inherit from or can be boxed into <b>System.Object</b></li>
+		</ul>
+	</li>
+	<li>By <b>constraining</b> types, it is possible to restrict the types that can be used to instantiate a generic class</li>
+	<li>To constrain a generic class, we use the <b>where</b> keyword
+		<p>
+		&nbsp;class MyGenericClass&lt;T&gt; <b>where T : constraint { . . . }</b>
+		</p>
+		<ul>
+			<li>Here, <b>constraint</b> defines what the constraint is.</li>
+		</ul>
+	</li>
+	<li>For a code example, refer to Chapter 12 exercise: <b>DefineGenericClass</b></li>
+</ol>
