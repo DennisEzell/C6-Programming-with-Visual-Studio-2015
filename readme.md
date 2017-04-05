@@ -1320,4 +1320,41 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 	<li>For a code example, refer to Chapter 12 exercise: <b>DefineGenericClass</b></li>
+	<li>It is possible to use one type parameter as a constraint on another through the base-class constraint such as:
+		<ul>
+			<li>&nbsp;&nbsp;class MyGenericClass&lt;T1, T2&gt; <b>where T2 : T1</b> { . . .}</li>
+			<li>Here, T2 must be the same type as T1 or inherit from T1</li>
+			<li>This is known as a <b>naked type constraint</b> meaning that one generic type parameter is used as a constraint on another</li>
+		</ul>		
+	</li>	
+</ol>
+
+### Inheriting Constraints
+<ol>
+	<li>When inheriting from a generic class, your new class generic must be <b>at least as constrained</b> as the inherited class
+		<ul>
+			<li>&nbsp;&nbsp;class SuperFarm&lt;T&gt; : Farm&lt;T&gt; where T : SuperCow {...}
+				<ul>
+					<li>This works because T is constrained to Animal in Farm&lt;T&gt;, and constraining it to SuperCow is constraining T to a subset of these values.</li>
+				</ul>
+			</li>
+			<li>&nbsp;&nbsp;class SuperFarm&lt;T&gt; : Farm&lt;T&gt; where T : class {...}
+				<ul>
+					<li>This code will not compile because the T we are supplying SuperFarm is not as constrained in Farm</li>
+				</ul>
+			</li>
+		</ul>		
+	</li>
+	<li>The inheriting class constraint must be a subset or equal to the original constraint class being inherited. </li>
+</ol>
+
+### Generic Methods
+<ol>
+	<li>You can also create generic methods that can be called to return any type so long as the type observes the specifed constraints
+		<ul>
+			<li>public Farm<U> GetSpecies<U>() where U : T => new Farm<U> { animals = Animals.FindAll(a => a is U).Cast<U>().ToList() };</li>
+			<li>The generic type parameter used here, U, is constrained by T, which is in turn constrained by the Farm&lt;T&gt; class to <b>Animal</b></li>
+		</ul>
+	</li>
+	<li>For a code example, refer to Chapter 12 exercise: <b>DefineGenericClass</b> inside the <b>Farm.GetSpecies()</b> method</li>
 </ol>

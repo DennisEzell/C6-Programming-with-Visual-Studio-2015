@@ -28,6 +28,17 @@ namespace DefineGenericClass
                 .FindAll(a => a is SuperCow)
                 .ForEach(a => (a as SuperCow).Fly());
 
+            WriteLine("\nCreating Chicken Coup");
+            Farm<Chicken> chickenCoup = farm.GetSpecies<Chicken>();
+            WriteLine("Feeding Chicken Coup");
+            chickenCoup.FeedTheAnimals();
+
+            WriteLine("\nCreating Super Diary Farm");
+            Farm<SuperCow> superDiaryFarm = farm.GetSpecies<SuperCow>();
+            WriteLine("Feeding Super Cows");
+            superDiaryFarm.FeedTheAnimals();
+
+
             ReadKey();
         }
     }
