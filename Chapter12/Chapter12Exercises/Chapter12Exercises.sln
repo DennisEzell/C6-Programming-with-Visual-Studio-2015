@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchSortGenericList", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefineGenericClass", "DefineGenericClass\DefineGenericClass.csproj", "{213B3B09-E814-4120-9DFA-FD3AF5960F51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variance", "Variance\Variance.csproj", "{CD57DB49-6C86-4CC4-BEBB-B4D497C06922}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{213B3B09-E814-4120-9DFA-FD3AF5960F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{213B3B09-E814-4120-9DFA-FD3AF5960F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{213B3B09-E814-4120-9DFA-FD3AF5960F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD57DB49-6C86-4CC4-BEBB-B4D497C06922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD57DB49-6C86-4CC4-BEBB-B4D497C06922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD57DB49-6C86-4CC4-BEBB-B4D497C06922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD57DB49-6C86-4CC4-BEBB-B4D497C06922}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

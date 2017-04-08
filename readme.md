@@ -1358,3 +1358,69 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>For a code example, refer to Chapter 12 exercise: <b>DefineGenericClass</b> inside the <b>Farm.GetSpecies()</b> method</li>
 </ol>
+
+### Generic Delegates
+<ol>
+	<li>To define a generic delegat, you simply declare and use one or more generic type parameters
+		<p>
+		&nbsp;&nbsp;public delegate T1 MyDelegate&lt;T1, T2&gt;(T2 op1, T2 op2) where T1:T2;
+		</p>
+	</li>
+	<li>For a code example, see Chapter 12 Exercise: SearchSortGenericList
+		<ul>
+			<li>Usage of the Comparison&lt;T&gt; and Predicate&lt;t&gt;</li>
+		</ul>
+	</li>
+</ol>
+
+### Variance
+<ol>
+	<li>Variance is the collective term for <b>covariance</b> and <b>contravariance</b>, two concepts that were introduced in.NET 4</li>
+	<li>Variance allows you to define <b>variant</b> type parameters on generic <b>interfaces and delegates</b> that allow for the conversion of one interface type to the other
+	<li>Three important Variance terms:
+		<ul>
+			<li><b>Invariant:</b> Term used to describe interface typs that are unrelated</li>
+			<li><b>Covariance:</b> In C# terms, an interface/delegate relationship that allows a base class typed interface variable to refer to a derived class reference</li>
+			<li><b>Contravariance:</b> In C# terms this is the opposite of <b>Covariance</b>, allows dervied class typed interface to have a base class reference</li>
+		</ul>
+	</li>
+	</li>
+	<li>The easiest way to grasp that variance means is to compare it with <b>polymorphism</b></li>
+	<li>Consider the following code
+		<p>
+		```C#6
+		IMethaneProducer<Cow> cowMethanProducer = Cow;
+		IMethanProducer<Animal> animalMethaneProducer = cowMethaneProducer;
+		```
+		</p>
+		<ul>
+			<li>The above code will not work because the second line presupposes a relationship between the two interface types(Cow & Animal) that doesnt exist, so there is no way of converting one into the other...this is where Variance comes in</li>
+			<li>To make the previous code work, the type parameter T for the IMethanProducer&lt;T&gt; interface must be <b>covariant</b></li>
+		</ul>
+	</li>
+	<li>Covariance in more detail
+		<ul>
+			<li>Tp define a generic type parameter as covariant, you use the <b>out</b> keyword in the type definition
+				<p>
+				```C#6
+				public interface IMethaneProducer<out T>{...}
+				```
+				</p>
+			</li>
+			<li>For interface definitions, covariant type parameters can be used only as return values of methods or property <b>get</b> accessors.</li>
+		</ul>
+	</li>
+	<li>Contravariance in more detail
+		<ul>
+			<li>To define a generic type parameter as contravariant, you use the <b>in</b> keyword in the type definition.
+				<p>
+				```C#6
+				public interface IGrassMuncher<in T>{...}
+				```
+				</p>
+			</li>
+		</ul>
+		<li>For interface definitions, contravariant type parameters can be used only as method parameters, not as return types.</li>
+	</li>
+	<li>For more information regarding <b>Variance</b> see Chapter 12 Exercise: Variance</li>
+</ol>
