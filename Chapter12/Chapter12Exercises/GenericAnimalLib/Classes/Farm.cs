@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using static System.Console;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using GenericAnimalLib.Interfaces;
 
-namespace GenericAnimalLib
+namespace GenericAnimalLib.Classes
 {
     /// <summary>
     /// You implement IEnumerable<T> to make it possible to iterate through the items
@@ -16,7 +18,7 @@ namespace GenericAnimalLib
 
         public List<T> Animals { get { return animals; } }
 
-        public void Add(T animal) => animals.Add(animal);       
+        public void Add(T animal) => animals.Add(animal);
 
         /// <summary>
         /// In order iterate over the items in Farm<T> without iterating over Farm<T>.Animals,
@@ -48,5 +50,9 @@ namespace GenericAnimalLib
         /// </summary>
         /// <returns></returns>
         public Farm<U> GetSpecies<U>() where U : T => new Farm<U> { animals = Animals.FindAll(a => a is U).Cast<U>().ToList() };
+
+        public void SortAnimals(IComparer<T> comparator) => Animals.Sort(comparator);
+
+        public void WriteAnimals() => Animals.ForEach(a => WriteLine($"{a.Name}"));
     }
 }

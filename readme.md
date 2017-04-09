@@ -1400,12 +1400,11 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>Covariance in more detail
 		<ul>
-			<li>Tp define a generic type parameter as covariant, you use the <b>out</b> keyword in the type definition
-				<p>
-				```C#6
-				public interface IMethaneProducer<out T>{...}
-				```
-				</p>
+			<li>Tp define a generic type parameter as covariant, you use the <b>out</b> keyword in the type definition</li>
+			<li>
+```C#6
+public interface IMethaneProducer<out T>{...}
+```				
 			</li>
 			<li>For interface definitions, covariant type parameters can be used only as return values of methods or property <b>get</b> accessors.</li>
 		</ul>

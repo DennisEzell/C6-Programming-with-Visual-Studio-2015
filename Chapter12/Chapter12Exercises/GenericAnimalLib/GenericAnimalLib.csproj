@@ -40,13 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="Chicken.cs" />
-    <Compile Include="Cow.cs" />
-    <Compile Include="Farm.cs" />
+    <Compile Include="Classes\Animal.cs" />
+    <Compile Include="Classes\Chicken.cs" />
+    <Compile Include="Classes\Cow.cs" />
+    <Compile Include="Classes\Farm.cs" />
+    <Compile Include="Comparators\AnimalNameLengthComparer.cs" />
+    <Compile Include="Interfaces\IGrassMuncher.cs" />
+    <Compile Include="Interfaces\IMethaneProducer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SuperCow.cs" />
+    <Compile Include="Classes\SuperCow.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

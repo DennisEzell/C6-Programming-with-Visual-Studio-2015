@@ -1,4 +1,4 @@
-﻿namespace VarianceDemo
+﻿namespace GenericAnimalLib.Interfaces
 {
     /// <summary>
     /// Covaraint interface for the Animal class and 

@@ -1,6 +1,6 @@
 ﻿using static System.Console;
 
-namespace GenericAnimalLib
+namespace GenericAnimalLib.Classes
 {
     public class SuperCow : Cow
     {

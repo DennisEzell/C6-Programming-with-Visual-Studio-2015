@@ -1,8 +1,9 @@
 ﻿using static System.Console;
+using GenericAnimalLib.Interfaces;
 
-namespace GenericAnimalLib
+namespace GenericAnimalLib.Classes
 {
-    public class Cow : Animal
+    public class Cow : Animal, IMethaneProducer<Cow>, IGrassMuncher<Cow>
     {
         public void Milk() => WriteLine($"{name} has been milked.");
         public Cow(string newName) : base(newName) { }
