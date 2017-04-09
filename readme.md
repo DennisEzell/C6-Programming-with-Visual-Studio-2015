@@ -1091,9 +1091,12 @@ Repo holding notes and exercises from the book.
 ### The <b>as</b> operator
 <ol>
 	<li>The <b>as</b> operator converts a type into a specified reference type</li>
-	<p>
-		&lt;operand&gt; <b>as</b> &lt;type&gt;
-	</p>
+<p>
+
+```C#
+	<operand> as <type>
+```
+</p>
 	<li>Possible applications of the <b>as</b> operator:
 		<ul>
 			<li>If &lt;operand&gt; is of type &lt;type&gt;</li>
@@ -1130,10 +1133,13 @@ Repo holding notes and exercises from the book.
 	<li><b>Generic Classes</b> make coding a lot simpler
 		<li>A generic class is built around whatever type, or types, you supply during <b>instantiation</b>, enabling you to strongly type an object with hardly any effort at all</li>
 		<li>In the context of collections, creating a "collection of type <b>T</b> objects" is as simple as providing the type in the parameter tag &lt;&gt; of the collection type
-			<p>
-				CollectionClass<b>&lt;ItemClass&gt;</b> items = new CollectionClass&lt;ItemClass&gt;();<br/>				
-				items.Add(new ItemClass());
-			</p>
+<p>
+
+```C#
+CollectionClass<b>&lt;ItemClass&gt;</b> items = new CollectionClass&lt;ItemClass&gt;();			
+items.Add(new ItemClass());
+````
+</p>
 		</li>
 	</li>
 	<li>A side note on Generics in C#
@@ -1152,15 +1158,21 @@ Repo holding notes and exercises from the book.
 	<li>This generic type allows us to get around a minor issue with value types</li>
 	<li>One of the ways in which <b>value</b> types differ from <b>reference</b> types is that they must contain a value</li>
 	<li>This is where generics gives you the ability to have nullable value types
-		<ul>
-			<li><b>System.Nullable&lt;int&gt; nullableInt</b></li>
-		</ul>
+<p>
+
+```C#
+System.Nullable&lt;int&gt; nullableInt
+```
+</p>
 	</li>
 	<li>Nullable types allow variables that would otherwise be vlaue types, to be null</li>
 	<li>An alternative syntax for declaring a value type as nullable:
-		<ul>
-			<li><b>int? nullableInt</b></li>
-		</ul>
+<p>
+
+```C#
+int? nullableInt
+```
+</p>
 	</li>
 	<li>What happens when one or both values in an operator evaluation that involves two nullable value are <b>null</b>?
 		<ul>
@@ -1176,17 +1188,27 @@ Repo holding notes and exercises from the book.
 	<li>The <b>??</b> operator, known as the <b>null coalescing opertor</b>
 		<ul>
 			<li>A binary operator that enables you to supply an alternative value to use for expressions that might evaluate into null</li>
-			<li>The following statements are functionally equivalent:
-				<p>
-					op1 ?? op2<br/>
-					op1 == null ? op2 : op1
-				</p>
+			<li>The following statements are functionally equivalent:</li>
+		</ul>
+<p>
+
+```C#
+op1 ?? op2
+op1 == null ? op2 : op1
+```
+</p>
+		<ul>
 			</li>
-			<li>This means you use the <b>??</b> operator to provide default values to use if a nullable type is null
-				<p>
-					int? op1 = null;<br/>
-					int result = op1 * 2 ?? 5;
-				</p>
+			<li>This means you use the <b>??</b> operator to provide default values to use if a nullable type is null</li>
+		</ul>	
+<p>
+
+```C#
+int? op1 = null;
+int result = op1 * 2 ?? 5;
+```
+</p>
+		<ul>
 				<ul>
 					<li>result will have the value of <b>5</b> since the evaluation of op1 * 2 results in null.</li>
 				</ul>
@@ -1201,17 +1223,23 @@ Repo holding notes and exercises from the book.
 	<li>Helps to overcome code ambiguity by burdensome null checking</li>
 	<li>It checks the type for value and assigns it null if one is not present</li>
 	<li>Example:
-		<p>
-			int? count = customers.orders?.Count()
-		</p>
+<p>
+
+```C#
+int? count = customers.orders?.Count()
+```
+</p>
 		<ul>
 			<li>Using the <b>?.</b> operator results in int? count being set to null when there are no orders for the customer</li>
 		</ul>
 	</li>
 	<li>We can also define default values if we combine the ?. with the ??
-		<p>
-			int? count = customer.orders?.Count() ?? 0;
-		</p>
+<p>
+
+```C#
+int? count = customer.orders?.Count() ?? 0;
+```
+</p>
 		<ul>
 			<li>Sets count to 0 if there are no orders for the customer</li>
 		</ul>
@@ -1223,9 +1251,12 @@ Repo holding notes and exercises from the book.
 	<li>Rather than derive a class from <b>CollectionBase</b> and implement the required methods, it can be quicker and easier simply to use the <b>List&lt;T&gt;</b> generic collection type</li>
 	<li>An added bonus here is that many of the methods you normally have to implement, such as <b>Add()</b>, are implemented for you.</li>
 	<li>An alternative way to achieve the same as extending collection base is to extend a Generic list of your particular type
-		<ul>
-			<li><b>public class Animals : List&lt;Animal&gt; {}</b></li>
-		</ul>
+<p>
+
+```C#
+public class Animals : List<Animal> {}
+```
+</p>
 	</li>
 	<li>To sort a <b>List&lt;T&gt;</b>, you can supply an <b>IComparable&lt;T&gt;</b> interface on th etype to be sorted, or supply an <b>Icomparer&lt;T&gt;</b>interface</li>
 	<li>Alternatively, you can supply a <b>generic delegate</b> as a sorting method
