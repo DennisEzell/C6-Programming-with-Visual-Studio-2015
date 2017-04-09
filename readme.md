@@ -1387,12 +1387,13 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>The easiest way to grasp that variance means is to compare it with <b>polymorphism</b></li>
 	<li>Consider the following code
-		<p>
-		```C#6
-		IMethaneProducer<Cow> cowMethanProducer = Cow;
-		IMethanProducer<Animal> animalMethaneProducer = cowMethaneProducer;
-		```
-		</p>
+<p>
+
+```C#6
+IMethaneProducer<Cow> cowMethanProducer = Cow;
+IMethanProducer<Animal> animalMethaneProducer = cowMethaneProducer;
+```
+</p>
 		<ul>
 			<li>The above code will not work because the second line presupposes a relationship between the two interface types(Cow & Animal) that doesnt exist, so there is no way of converting one into the other...this is where Variance comes in</li>
 			<li>To make the previous code work, the type parameter T for the IMethanProducer&lt;T&gt; interface must be <b>covariant</b></li>
@@ -1405,6 +1406,11 @@ Repo holding notes and exercises from the book.
 <p>
 
 ```C#
+/// <summary>
+/// Covaraint interface for the Animal class and 
+/// its derived classes 
+/// </summary>
+/// <typeparam name="T">The covariant type</typeparam>
 public interface IMethaneProducer<out T>{...}
 ```
 </p>
