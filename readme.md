@@ -836,20 +836,26 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 	<li>The ability to strongly type our collections means we no longer have to cast our arrays (since the array only works with the types we specify instead of System.Object)
-		<p>
-			public class Animals : CollectionBase<br/>
-			{<br/>
-			&nbsp;&nbsp;public void Add(Animal newAnimal)<br/>
-			&nbsp;&nbsp;{<br/>
-			&nbsp;&nbsp;&nbsp;List.Add(newAnimal);<br/>			
-			&nbsp;&nbsp;}<br/><br/>
-			&nbsp;&nbsp;public void Remove(Animal oldAnimal)<br/>
-			&nbsp;&nbsp;{<br/>
-			&nbsp;&nbsp;&nbsp;List.Remove(oldAnimal);<br/>			
-			&nbsp;&nbsp;}<br/>
-			&nbsp;&nbsp;public Animals(){}<br/>
-			}
-		</p>
+<p>
+
+```C#
+public class Animals : CollectionBase
+{
+	public void Add(Animal newAnimal)
+	{
+		List.Add(newAnimal);			
+	}
+	
+	public void Remove(Animal oldAnimal)
+	{
+		List.Remove(oldAnimal);		
+	}
+
+	public Animals(){}
+	
+}
+```
+</p>
 	</li>
 </ol>
 
@@ -857,18 +863,21 @@ Repo holding notes and exercises from the book.
 <ol>
 	<li>An <b>indexer</b> is a special kind of property that you can add to a class to provide array-like access</li>
 	<li>An indexer allows for object retrieval without casting by index</li>
-	<li>An example of an indexer on the Animals coolection:
-		<p>
-		public class Animals : CollectionBase<br/>
-		{<br/>
-		&nbsp;...<br/>
-		&nbsp;public Animal this[int animalIndex]<br/>
-		&nbsp;{<br/>
-		&nbsp;&nbsp;get{ return (Animal)List[animalIndex]; }<br/>
-		&nbsp;&nbsp;set{ List[animalIndex] = value; }<br/>		
-		&nbsp;}<br/>		
-		}
-		</p>
+	<li>An example of an indexer on the Animals collection:
+<p>
+
+```C#
+public class Animals : CollectionBase
+{
+	...
+	public Animal this[int animalIndex]
+	{
+		get{ return (Animal)List[animalIndex]; }
+		set{ List[animalIndex] = value; }	
+	}		
+}
+```
+</p>
 	</li>
 	<li>The indexer will now allow us to retrieve values from our Animals array in a fashion such as
 		<ul>
@@ -911,13 +920,16 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 	<li>You can use a <b>foreach</b> loop which, for each iteration, will return a derived class of <b>DictionaryEntry</b> structs
-		<p>
-		foreach(DictionaryEntry entry in animalCollection)<br/>
-		&nbsp;{<br/>
-		&nbsp;&nbsp;WriteLine($"New {entry.Value.ToString()} object added to "+<br/>
-		&nbsp;&nbsp;&nbsp;$"custom collection, Name = {((Animal)entry.Value).Name}");<br/>		
-		&nbsp;}
-		</p>
+<p>
+
+```C#
+foreach(DictionaryEntry entry in animalCollection)<br/>
+{
+	WriteLine($"New {entry.Value.ToString()} object added to "+
+	$"custom collection, Name = {((Animal)entry.Value).Name}");	
+}
+```
+</p>
 	</li>
 </ol>
 
@@ -927,9 +939,12 @@ Repo holding notes and exercises from the book.
 	<li>To iterate over a class, use a method called <b>GetEnumerator()</b> with a return type of <b>IEnumerator</b></li>
 	<li>To iterate over a class memeber, such as a method, use <b>IEnumberable</b></li>
 	<li>Within an interator block, you select the values to be used in the foreach loop by using the <b>yield</b> keyword
-		<p>
-			yield return &lt;value&gt;
-		</p>
+<p>
+
+```C#
+	yield return <value>
+```
+</p>
 	</li>
 	<li>See Chapter 11 Exercise: Iterators</li>
 </ol>
@@ -975,18 +990,22 @@ Repo holding notes and exercises from the book.
 	<li><b>Operator Overloading</b> enables you to use standard operators, such as +, >, and so on, with classes that you design.</li>
 	<li>This is useful because you can perform whatever processing you want in the implementation of the overloaded operator</li>
 	<li>Below is an example of a class overloading the <b>+</b> operator
-		<p>
-			public class AddClass1<br/>
-			&nbsp;{<br/>
-			&nbsp;&nbsp;public int val;<br/>
-			&nbsp;&nbsp;public static AddClass1 operator +(AddClass1 op1, AddClass1 op2)<br/>
-			&nbsp;&nbsp;{<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;AddClass1 returnVal = new AddClas1();<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;returnVal.val = op1.val + op2.val;<br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;return returnVal;
-			&nbsp;&nbsp;}<br/>
-			&nbsp;}
-		</p>
+<p>
+
+```C#
+public class AddClass1
+{
+	public int val;
+	
+	public static AddClass1 operator +(AddClass1 op1, AddClass1 op2)
+	{
+		AddClass1 returnVal = new AddClas1();
+		returnVal.val = op1.val + op2.val;
+		return returnVal;
+	}
+}
+```
+</p>
 	</li>
 	<li>The following operators can be overloaded
 		<ul>
@@ -1009,7 +1028,7 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>If you overload the <b>true</b> and <b>false</b> operators, then you can use classes in Boolean expressions
 		<ul>
-			<li>Suc as <b>if(op1){}</b></li>
+			<li>Such as <b>if(op1){}</b></li>
 		</ul>
 	</li>
 	<li>Check out the Card Application project to see how Operator Overloading is implemented</li>
@@ -1048,43 +1067,57 @@ Repo holding notes and exercises from the book.
 	<li>You can define both <b>implicit</b> and <b>explicit</b> conversions between types</li>
 	<li>This is necessary if you want to convert between types that arent related - if there is no inheritance relationship between them and no shared interfaces</li>
 	<li>Suppose you want to define implicit conversion between ConvClass1 and ConvClass2
-		<p>
-		&nbsp;&nbsp;ConvClass1 op1 = new ConvClass1()<br/>
-		&nbsp;&nbsp;ConvClass2 op2 = op1
-		</p>
+<p>
+
+```C#
+ConvClass1 op1 = new ConvClass1()
+ConvClass2 op2 = op1
+```
+</p>
 	</li>
 	<li>You could alos define an explicit conversion
-		<p>
-		&nbsp;&nbsp;ConvClass1 op1 = new ConvClass1();<br/>
-		&nbsp;&nbsp;ConvClass2 op2 = (ConvClass2)op1
-		</p>
+<p>
+
+```C#
+ConvClass1 op1 = new ConvClass1();
+ConvClass2 op2 = (ConvClass2)op1
+```
+</p>
 	</li>
 	<li>Below illustrates the code behind both the implicit and explicit conversions
-		<p>
-		public class ConvClass1<br/>
-		&nbsp;{<br/>
-		&nbsp;&nbsp;public int val;<br/>
-		&nbsp;&nbsp;public static <b>implicit</b> operator ConvClass2(ConvClass1 op1)<br/>
-		&nbsp;&nbsp;&nbsp;{<br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;ConvClass2 returnVal = new ConvClass2();<br/>		
-		&nbsp;&nbsp;&nbsp;&nbsp;returnVal.val = (int)op1.val;<br/>		
-		&nbsp;&nbsp;&nbsp;&nbsp;return returnVal;<br/>		
-		&nbsp;&nbsp;&nbsp;}<br/>		
-		}
-		</p>
+<p>
+
+```C#
+public class ConvClass1
+{
+	public int val;
+	
+	public static implicit operator ConvClass2(ConvClass1 op1)
+	{
+		ConvClass2 returnVal = new ConvClass2();	
+		returnVal.val = (int)op1.val;	
+		return returnVal;	
+	}		
+}
+```
+</p>
 		<br/>
-		<p>
-		public class ConvClass2<br/>
-		&nbsp;{<br/>
-		&nbsp;&nbsp;public int val;<br/>
-		&nbsp;&nbsp;public static <b>explicit</b> operator ConvClass1(ConvClass2 op1)<br/>
-		&nbsp;&nbsp;&nbsp;{<br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;ConvClass1 returnVal = new ConvClass1();<br/>		
-		&nbsp;&nbsp;&nbsp;&nbsp;checked{ returnVal.val = (int)op1.val;}<br/>		
-		&nbsp;&nbsp;&nbsp;&nbsp;return returnVal;<br/>		
-		&nbsp;&nbsp;&nbsp;}<br/>		
-		}		
-		</p>
+<p>
+
+```C#
+public class ConvClass2
+{
+	public int val;
+	
+	public static <b>explicit</b> operator ConvClass1(ConvClass2 op1)
+	{
+		ConvClass1 returnVal = new ConvClass1();		
+		checked{ returnVal.val = (int)op1.val;}		
+		return returnVal;		
+	}
+}
+```		
+</p>
 	</li>
 </ol>
 
@@ -1136,7 +1169,7 @@ Repo holding notes and exercises from the book.
 <p>
 
 ```C#
-CollectionClass<b>&lt;ItemClass&gt;</b> items = new CollectionClass&lt;ItemClass&gt;();			
+CollectionClass<ItemClass> items = new CollectionClass<ItemClass>();			
 items.Add(new ItemClass());
 ````
 </p>
