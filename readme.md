@@ -1402,6 +1402,7 @@ Repo holding notes and exercises from the book.
 		<ul>
 			<li>Tp define a generic type parameter as covariant, you use the <b>out</b> keyword in the type definition</li>
 			<li>
+			
 ```C#6
 public interface IMethaneProducer<out T>{...}
 ```				
