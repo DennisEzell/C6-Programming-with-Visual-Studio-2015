@@ -1337,6 +1337,7 @@ Repo holding notes and exercises from the book.
 ```C#
 class SuperFarm<T> : Farm<T> where T : SuperCow {...}
 ```
+</p>
 		<ul>
 				<ul>
 					<li>This works because T is constrained to Animal in Farm&lt;T&gt;, and constraining it to SuperCow is constraining T to a subset of these values.</li>
@@ -1348,6 +1349,7 @@ class SuperFarm<T> : Farm<T> where T : SuperCow {...}
 ```C#
 class SuperFarm<T> : Farm<T> where T : class {...}
 ```
+</p>
 		<ul>
 				<ul>
 					<li>This code will not compile because the T we are supplying SuperFarm is not as constrained in Farm</li>
