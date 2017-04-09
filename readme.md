@@ -1270,18 +1270,25 @@ Repo holding notes and exercises from the book.
 <ol>
 	<li>A new feature inttroduced in C#6 is <b>index initializers</b></li>
 	<li>This concept allows initialization of indices inside the object initializer
-		<p>
-		&nbsp;&nbsp;var names = new Dictionary&lt;int, string&gt;<br/>
-		&nbsp;&nbsp;{<br/>
-		&nbsp;&nbsp;&nbsp;[1] = "Dennnis",<br/>
-		&nbsp;&nbsp;&nbsp;[2] = "Daniel"<br/>		
-		&nbsp;&nbsp;}
-		</p>
+<p>
+
+```C#
+var names = new Dictionary<int, string>
+	{
+		[1] = "Dennis",
+		[2] = "Daniel"	
+	}
+```
+</p>
 	</li>
 	<li>You can also use index intializers in <b>expression-bodied methods</b>
-		<p>
-		&nbsp;public Dictionary&lt;int, string&gt; GetNames() => new Dictionary&lt;int, string&gt; { [1] = "Dennis", [2] = "Daniel"};
-		</p>
+<p>
+
+```C#
+
+&public Dictionary<int, string> GetNames() => new Dictionary<int, string> { [1] = "Dennis", [2] = "Daniel"};
+```
+</p>
 	</li>
 </ol>
 
@@ -1294,12 +1301,15 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 	<li>By using the <b>default</b> keyword, you can assign a null value if the type is a reference type, or a default value if it is a value type
-		<p>
-		&nbsp;&nbsp;public MyGenericClass()<br/>
-		&nbsp;&nbsp;&nbsp;{<br/>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;innerT1Object = default(T1);<br/>		
-		&nbsp;&nbsp;&nbsp;}
-		</p>
+<p>
+
+```C#
+public MyGenericClass()
+{
+	innerT1Object = default(T1);
+}
+```
+</p>
 	</li>
 </ol>
 
@@ -1312,9 +1322,12 @@ Repo holding notes and exercises from the book.
 	</li>
 	<li>By <b>constraining</b> types, it is possible to restrict the types that can be used to instantiate a generic class</li>
 	<li>To constrain a generic class, we use the <b>where</b> keyword
-		<p>
-		&nbsp;class MyGenericClass&lt;T&gt; <b>where T : constraint { . . . }</b>
-		</p>
+<p>
+
+```C#
+class MyGenericClass<T> where T : constraint { . . . }
+```
+</p>
 		<ul>
 			<li>Here, <b>constraint</b> defines what the constraint is.</li>
 		</ul>
