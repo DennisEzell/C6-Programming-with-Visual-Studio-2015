@@ -1233,14 +1233,28 @@ Repo holding notes and exercises from the book.
 			<li>There are two generic delegate types you can use:
 				<ul>
 					<li><b>Comparison&lt;T&gt;</b>: A delegate type for a method used for sorting, with the following return type and parameters
-						<p>
-							`int method (T objectA, T objectB)`
-						</p>
+				</ul>
+		</ul>
+<p>
+
+```C#
+int method (T objectA, T objectB)
+```
+</p>
+		<ul>
+				<ul>
 					</li>
 					<li><b>Predicate&lt;T&gt;</b>: A delegate type for a method used for searching, with the following return type and parameters:
-						<p>
-							`bool method (T targetObject)`
-						</p>
+				</ul>
+		</ul>
+<p>
+
+```C#
+bool method (T targetObject)
+```
+</p>
+		<ul>
+				<ul>
 					</li>
 				</ul>
 			</li>
