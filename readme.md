@@ -1234,12 +1234,12 @@ Repo holding notes and exercises from the book.
 				<ul>
 					<li><b>Comparison&lt;T&gt;</b>: A delegate type for a method used for sorting, with the following return type and parameters
 						<p>
-							int method (T objectA, T objectB)
+							`int method (T objectA, T objectB)`
 						</p>
 					</li>
 					<li><b>Predicate&lt;T&gt;</b>: A delegate type for a method used for searching, with the following return type and parameters:
 						<p>
-							bool method (T targetObject)
+							`bool method (T targetObject)`
 						</p>
 					</li>
 				</ul>
@@ -1252,23 +1252,29 @@ Repo holding notes and exercises from the book.
 <ol>
 	<li>There are many situations in which you can use a <b>method group</b> to implicitly create delegates</li>
 	<li>Consider the following call for leveraging a delegate (See Chapter 12 SearchSortGenericList exercise)
-		<p>
-		&nbsp;&nbsp;Comparison&lt;Vector&gt; sorter = new Comparison&lt;Vector&gt;(VectorDelegate.Compare);<br/>
-		&nbsp;&nbsp;route.Sort(sorter);
-		</p>
+<p>
+
+```C#
+Comparison<Vector> sorter = new Comparison<Vector>(VectorDelegate.Compare);
+route.Sort(sorter);
+```
+</p>
 	</li>
 	<li>The above delegate call can be reduced to the below code
-		<p>
-		&nbsp;&nbsp;route.Sort(VectorDelegate.Compare);
-		</p>
+<p>
+
+```C#
+route.Sort(VectorDelegate.Compare);
+```
+</p>
 	</li>
-	<li>The reference to VectorDelegate.Compare without the (), is refereed to as a <b>method group</b></li>
+	<li>The reference to `VectorDelegate.Compare` without the (), is refereed to as a <b>method group</b></li>
 	<li>The <b>Sort()</b> method obviously needs an instance of a comparison interface, but the compiler realizes and creates one for you from the method you supply.</li>
 </ol>
 
 ### Index Initializers
 <ol>
-	<li>A new feature inttroduced in C#6 is <b>index initializers</b></li>
+	<li>A new feature introduced in C#6 is <b>index initializers</b></li>
 	<li>This concept allows initialization of indices inside the object initializer
 <p>
 
