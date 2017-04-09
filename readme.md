@@ -1351,8 +1351,13 @@ Repo holding notes and exercises from the book.
 ### Generic Methods
 <ol>
 	<li>You can also create generic methods that can be called to return any type so long as the type observes the specifed constraints
+		<p>
+		
+		```C#6
+		public Farm<U> GetSpecies<U>() where U : T => new Farm<U> { animals = Animals.FindAll(a => a is U).Cast<U>().ToList() };
+		````
+		</p>
 		<ul>
-			<li>public Farm<U> GetSpecies<U>() where U : T => new Farm<U> { animals = Animals.FindAll(a => a is U).Cast<U>().ToList() };</li>
 			<li>The generic type parameter used here, U, is constrained by T, which is in turn constrained by the Farm&lt;T&gt; class to <b>Animal</b></li>
 		</ul>
 	</li>
@@ -1362,9 +1367,12 @@ Repo holding notes and exercises from the book.
 ### Generic Delegates
 <ol>
 	<li>To define a generic delegat, you simply declare and use one or more generic type parameters
-		<p>
-		&nbsp;&nbsp;public delegate T1 MyDelegate&lt;T1, T2&gt;(T2 op1, T2 op2) where T1:T2;
-		</p>
+<p>
+
+```C#6
+public delegate T1 MyDelegate&lt;T1, T2&gt;(T2 op1, T2 op2) where T1:T2;
+```
+</p>
 	</li>
 	<li>For a code example, see Chapter 12 Exercise: SearchSortGenericList
 		<ul>
