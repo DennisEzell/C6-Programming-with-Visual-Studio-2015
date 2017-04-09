@@ -1109,7 +1109,7 @@ public class ConvClass2
 {
 	public int val;
 	
-	public static <b>explicit</b> operator ConvClass1(ConvClass2 op1)
+	public static explicit operator ConvClass1(ConvClass2 op1)
 	{
 		ConvClass1 returnVal = new ConvClass1();		
 		checked{ returnVal.val = (int)op1.val;}		
