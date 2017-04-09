@@ -1416,7 +1416,20 @@ public interface IMethaneProducer<out T>{...}
 		<ul>
 			<li>To define a generic type parameter as contravariant, you use the <b>in</b> keyword in the type definition.</li>
 		</ul>
-		<li>For interface definitions, contravariant type parameters can be used only as method parameters, not as return types.</li>
+<p>
+
+```C#
+/// <summary>
+/// Contravariant interface for the derived classes 
+/// of the Animal base class
+/// </summary>
+/// <typeparam name="T">The contravaraint type</typeparam>
+public interface IGrassMuncher<in T> { }
+```
+</p>
+		<ul>
+			<li>For interface definitions, contravariant type parameters can be used only as method parameters, not as return types.</li>
+		</ul>
 	</li>
 	<li>For more information regarding <b>Variance</b> see Chapter 12 Exercise: Variance</li>
 </ol>
