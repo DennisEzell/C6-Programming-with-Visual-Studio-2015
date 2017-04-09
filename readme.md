@@ -1332,13 +1332,23 @@ Repo holding notes and exercises from the book.
 ### Inheriting Constraints
 <ol>
 	<li>When inheriting from a generic class, your new class generic must be <b>at least as constrained</b> as the inherited class
+<p>
+
+```C#
+class SuperFarm<T> : Farm<T> where T : SuperCow {...}
+```
 		<ul>
-			<li>&nbsp;&nbsp;class SuperFarm&lt;T&gt; : Farm&lt;T&gt; where T : SuperCow {...}
 				<ul>
 					<li>This works because T is constrained to Animal in Farm&lt;T&gt;, and constraining it to SuperCow is constraining T to a subset of these values.</li>
 				</ul>
 			</li>
-			<li>&nbsp;&nbsp;class SuperFarm&lt;T&gt; : Farm&lt;T&gt; where T : class {...}
+		</ul>
+<p>
+
+```C#
+class SuperFarm<T> : Farm<T> where T : class {...}
+```
+		<ul>
 				<ul>
 					<li>This code will not compile because the T we are supplying SuperFarm is not as constrained in Farm</li>
 				</ul>
