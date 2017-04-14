@@ -207,6 +207,7 @@ Repo holding notes and exercises from the book.
 					<li>In the case of wanting double quotes in a verbatim string you have to use "" within the verbatim string</li>
 				</ul>
 		</ul>
+	</li>
 <p>
 
 ```C#
