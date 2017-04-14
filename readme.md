@@ -202,7 +202,7 @@ Repo holding notes and exercises from the book.
 					<li>Verbatim: @"C:\Temp\MyDir\MyFile.doc"</li>
 				</ul>
 			</li>
-			<li>Verbatim can also be used in conjunction with String interpolation
+			<li>Verbatim can also be used in conjunction with String interpolation</li>
 				<ul>
 					<li>In the case of wanting double quotes in a verbatim string you have to use "" within the verbatim string</li>
 				</ul>
@@ -210,7 +210,7 @@ Repo holding notes and exercises from the book.
 <p>
 
 ```C#
-Console.WriteLine(@”Foo “”Bar”” Baz “”Quux”””);<br/>
+Console.WriteLine(@”Foo “”Bar”” Baz “”Quux”””);
 Foo “Bar” Baz “Quux”
 ```
 </p>
@@ -219,7 +219,6 @@ Foo “Bar” Baz “Quux”
 
 					<li>To see an example of String interpolation used with a verbatim command, look at Ch05Ex01-TypeConversion</li>
 				</ul>
-			</li>
 		</ul>
 	</li>
 </ol>
