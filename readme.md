@@ -1242,7 +1242,7 @@ items.Add(new ItemClass());
 <p>
 
 ```C#
-System.Nullable&lt;int&gt; nullableInt
+System.Nullable<int> nullableInt
 ```
 </p>
 	</li>
