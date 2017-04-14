@@ -316,7 +316,7 @@ Foo “Bar” Baz “Quux”
 <p>
 
 ```C#
-string myString = "A String";<br/>
+string myString = "A String";
 char[] myChars = myString.ToCharArray();
 
 ```
@@ -520,12 +520,12 @@ using(<VariableName>)
 
 ```C#
 Animal myAnimal = new Cow();
-myAnimal.EatFood() // EatFood is defined in both the base class (Animal) and derived class (Cow). This will call the Cow.EatFood() 		
+myAnimal.EatFood(); // EatFood is defined in both the base class (Animal) and derived class (Cow). This will call the Cow.EatFood() 		
 
-myAnimal.Moo() // Will not compile because you cant access the dervied class method (Cow.Moo()) from a base class variable.
+myAnimal.Moo(); // Will not compile because you cant access the dervied class method (Cow.Moo()) from a base class variable.
 
 Cow myCow = (Cow)myAnimal;
-myCow.Moo(); //Will work when we cast the base class into a derived class variable.
+myCow.Moo();; //Will work when we cast the base class into a derived class variable.
 
 ```
 </p>
@@ -575,6 +575,7 @@ public class MyBaseClass
 	public MyBase()
 	{
 	}
+	
 	public MyBaseClass(int i)
 	{
 	}
@@ -615,15 +616,14 @@ public class MyDerivedClass : MyBaseClass
 				</ul>
 			</li>
 		</ul>
-		<ul>
-			<li>You could also do</li>
-			<li>MyDerivedClass myObj = new MyDerivedClass(4)</li>
-				<ul>
-					<li>System.Object.Object() constructor will execute</li>
-					<li>MyBaseClass.MyBaseClass() constructor will execute</li>
-					<li>MyDerivedClass.MyDerivedClass(int i) constructor will execute</li>
-				</ul>
-		</ul>
+		<li>You could also do</li>
+		<li>MyDerivedClass myObj = new MyDerivedClass(4)
+			<ul>
+				<li>System.Object.Object() constructor will execute</li>
+				<li>MyBaseClass.MyBaseClass() constructor will execute</li>
+				<li>MyDerivedClass.MyDerivedClass(int i) constructor will execute</li>
+			</ul>
+		</li>
 	</li>
 	<li>If you wanted to control what base class constructor is called, you can use a <b>constructor initializer</b>
 		<ul>
