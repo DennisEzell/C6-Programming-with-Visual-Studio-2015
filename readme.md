@@ -24,7 +24,7 @@ Repo holding notes and exercises from the book.
 
 ### Writing Applications Using the .NET Framework
 <ol>
-	<li>In order for C# code to execute, it must be converted into a langauge that the target operating system understands, known as <b>native code</b></li>
+	<li>In order for C# code to execute, it must be converted into a language that the target operating system understands, known as <b>native code</b></li>
 		<ul>
 			<li>This conversion is called <b>compiling</b> code, an act that is performed by a compiler.</li>
 			<li>Under the .NET Framework, this is a two stage process</li>
@@ -205,10 +205,18 @@ Repo holding notes and exercises from the book.
 			<li>Verbatim can also be used in conjunction with String interpolation
 				<ul>
 					<li>In the case of wanting double quotes in a verbatim string you have to use "" within the verbatim string</li>
-						<p>
-							Console.WriteLine(@”Foo “”Bar”” Baz “”Quux”””);<br/>
-							 Foo “Bar” Baz “Quux”							
-						</p>
+				</ul>
+		</ul>
+<p>
+
+```C#
+Console.WriteLine(@”Foo “”Bar”” Baz “”Quux”””);<br/>
+Foo “Bar” Baz “Quux”
+```
+</p>
+		<ul>
+				<ul>
+
 					<li>To see an example of String interpolation used with a verbatim command, look at Ch05Ex01-TypeConversion</li>
 				</ul>
 			</li>
@@ -221,7 +229,7 @@ Repo holding notes and exercises from the book.
 	<li>C#6 has introduced the <b>using static</b> keyword
 		<ul>
 			<li>This allows the inclusion of static members directly into the scope of a C# program</li>
-			<li>For example you can use the <b>WriteLine()</b> by prefixing the name space befoe the method called
+			<li>For example you can use the <b>WriteLine()</b> by prefixing the name space before the method called
 				<ul>
 					<li><b>System.Console.WriteLine()</b></li>
 				</ul>
@@ -309,13 +317,16 @@ Repo holding notes and exercises from the book.
 	<li>A <b>String</b> type variable can be treated as a read-only array of <b>char</b> variables
 		<ul>
 			<li>This means you cant assign individual characters to a string the same way you would access them</li>
-			<li>To get a <b>char array</b> that you can write to, you can use <b>ToCharArray()</b>
-				<p>
-					string myString = "A String";<br/>
-					char[] myChars = myString.ToCharArray();
-				</p>
-			</li>			
+			<li>To get a <b>char array</b> that you can write to, you can use <b>ToCharArray()</b></li>		
 		</ul>
+<p>
+
+```C#
+string myString = "A String";<br/>
+char[] myChars = myString.ToCharArray();
+
+```
+</p>
 	</li>
 	<li>The <b>PadLeft()</b> and <b>PadRight()</b> commands can be used to include extra spacing to a string
 		<p>
@@ -389,25 +400,28 @@ Repo holding notes and exercises from the book.
 <ol>
 	<li>The C# language includes syntax for <b>structured exception handling (SEH)</b></li>
 	<li>The following illustrates SEH
-		<p>
-			try<br/>
-			{<br/>
-			&nbsp;&nbsp;...<br/>
-			}<br/>
-			catch (&lt;exceptionType&gt; e) when (filterIsTrue)<br/>
-			{<br/>
-			&nbsp;&nbsp;&lt;await methodName(e);&gt<br/>
-			&nbsp;&nbsp;...<br/>
-			}<br/>
-			finally<br/>
-			{<br/>
-			&nbsp;&nbsp;...<br/>
-			}<br/>
-		</p>
+<p>
+
+```C#
+try
+{
+	...
+}
+catch (<exceptionType> e) when (filterIsTrue)
+{
+	<await methodName(e)>
+	...
+}
+finally
+{
+	...
+}
+```
+</p>
 	</li>
 	<li><b>await</b> can be used optionally within the <b>catch</b> or <b>finally</b> blocks
 		<ul>
-			<li><b>await</b> is used to support advanced asnchronous programming techniques.</li>
+			<li><b>await</b> is used to support advanced asynchronous programming techniques.</li>
 		</ul>
 	</li>
 	<li>C#6 introduced a concept called <b>exception filtering</b>
@@ -467,14 +481,18 @@ Repo holding notes and exercises from the book.
 <ol>
 	<li>If an object implements the <b>IDisposable</b> interface and implements the <b>Dispose()</b> method, then this object will free up any system resources just before it goes out of scope</li>
 	<li>For instance say the &lt;ClassName&gt; implements the IDisposable interface.
-		<p>
-			&lt;ClassName&gt; &lt;VariableName&gt; = new &lt;ClasName&gt;();<br/>
-			...<br/>
-			using(&lt;VariableName&gt)<br/>
-			{<br/>
-			&nbsp;&nbsp;...<br/>			
-			}<br/>			
-		</p>
+<p>
+
+```C#
+<ClassName> <VariableName> = new <ClasName>();
+...
+using(<VariableName>)
+{
+	...
+}		
+
+```
+</p>
 	</li>	
 	<li>After the <b>using</b> block executes, then the Class will call its Dispose() method to free up resources</li>
 </ol>
@@ -504,15 +522,19 @@ Repo holding notes and exercises from the book.
 	<li>Polymorphism allows us to use variable types to refer to base/derived class instances</li>
 	<li>Typically this is done by using a variable of the base class type, and assigning it an instance of the derived class</li>
 	<li><b>Note:</b> You cant call methods that are defined only in the derived class when using a base class variable type.
-		<p>
-			Animal myAnimal = new Cow();<br/>
-			myAnimal.EatFood() // EatFood is defined in both the base class (Animal) and derived class (Cow). This will call the Cow.EatFood() <br/>			
-			<br/>
-			myAnimal.Moo() // Will not compile because you cant access the dervied class method (Cow.Moo()) from a base class variable. <br/>
-			<br/>
-			Cow myCow = (Cow)myAnimal;<br/>
-			myCow.Moo(); //Will work when we cast the base class into a derived class variable. <br/>
-		</p>
+<p>
+
+```C#
+Animal myAnimal = new Cow();
+myAnimal.EatFood() // EatFood is defined in both the base class (Animal) and derived class (Cow). This will call the Cow.EatFood() 		
+
+myAnimal.Moo() // Will not compile because you cant access the dervied class method (Cow.Moo()) from a base class variable.
+
+Cow myCow = (Cow)myAnimal;
+myCow.Moo(); //Will work when we cast the base class into a derived class variable.
+
+```
+</p>
 	</li>
 </ol>
 
@@ -550,33 +572,43 @@ Repo holding notes and exercises from the book.
 	<li>Consider the following class structures
 		<ul>
 			<li>Base Class:</li>
-			<p>
-				public class MyBaseClass<br/>
-				{<br/>
-				&nbsp;&nbsp;public MyBase()<br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/><br/>
-				&nbsp;&nbsp;public MyBaseClass(int i)<br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/>
-				}
-			</p>
-			<li>Derived Class:</li>
-			<p>
-				public class MyDerivedClass : MyBaseClass<br/>
-				{<br/>
-				&nbsp;&nbsp;public MyDerivedClass()<br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/><br/>
-				&nbsp;&nbsp;public MyDerivedClass(int i)<br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/><br/>
-				&nbsp;&nbsp;public MyDerivedClass(int i, int j)<br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/>				
-				}
-			</p>
 		</ul>
+<p>
+
+```C#
+public class MyBaseClass
+{
+	public MyBase()
+	{
+	}
+	public MyBaseClass(int i)
+	{
+	}
+}
+```
+</p>
+		<ul>
+			<li>Derived Class:</li>
+		</ul>
+<p>
+
+```C#
+public class MyDerivedClass : MyBaseClass
+{
+	public MyDerivedClass()
+	{
+	}
+	
+	public MyDerivedClass(int i)
+	{
+	}
+	
+	public MyDerivedClass(int i, int j)
+	{
+	}				
+}
+```
+</p>
 	</li>
 	<li>You could instantiate the <b>MyDerivedClass</b> as follows
 		<ul>
@@ -602,20 +634,28 @@ Repo holding notes and exercises from the book.
 	<li>If you wanted to control what base class constructor is called, you can use a <b>constructor initializer</b>
 		<ul>
 			<li>Do this by specifying the base class constructor to be be called from a derived class constructor</li>
-			<p>
-				public class MyDerivedClass : MyBaseClass<br/>
-				{<br/>
-				&nbsp;&nbsp;public MyDerivedClass()<br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/><br/>
-				&nbsp;&nbsp;public MyDerivedClass(int i)<br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/><br/>
-				&nbsp;&nbsp;public MyDerivedClass(int i, int j)<b> : base(i)</b><br/>
-				&nbsp;&nbsp;{<br/>
-				&nbsp;&nbsp;}<br/>				
-				}
-			</p>
+		</ul>
+<p>
+
+```C#
+public class MyDerivedClass : MyBaseClass
+{
+	public MyDerivedClass()
+	{
+	}
+	
+	public MyDerivedClass(int i)
+	{
+	}
+	
+	public MyDerivedClass(int i, int j) : base(i)
+	{
+	}		
+}
+
+```
+</p>
+		<ul>
 			<li>Now when we invoke the 2 argument constructor it will call the single argument constructor of the base class</li>
 			<p>
 				MyDerivedClass MyObj = new MyDerivedClass(4,8);
@@ -630,20 +670,26 @@ Repo holding notes and exercises from the book.
 		</ul>
 	</li>
 	<li>You can also call another constructor in the same class using the <b>this</b> keyword
-		<p>
-			public class MyDerivedClass : MyBaseClass<br/>
-			{<br/>
-			&nbsp;&nbsp;public MyDerivedClass()<b> : this(5,6)</b><br/>
-			&nbsp;&nbsp;{<br/>
-			&nbsp;&nbsp;}<br/><br/>
-			&nbsp;&nbsp;public MyDerivedClass(int i)<br/>
-			&nbsp;&nbsp;{<br/>
-			&nbsp;&nbsp;}<br/><br/>
-			&nbsp;&nbsp;public MyDerivedClass(int i, int j) : base(i)<br/>
-			&nbsp;&nbsp;{<br/>
-			&nbsp;&nbsp;}<br/>				
-			}
-		</p>
+<p>
+
+```C#
+public class MyDerivedClass : MyBaseClass
+{
+	public MyDerivedClass() : this(5,6)
+	{
+	}
+	
+	public MyDerivedClass(int i)
+	{
+	}
+	
+	public MyDerivedClass(int i, int j) : base(i)
+	{
+	}				
+}
+
+```
+</p>
 		<li>This will cause the below sequence of events
 			<ul>
 				<li>System.Object.Object() constructor will execute</li>
@@ -691,21 +737,27 @@ Repo holding notes and exercises from the book.
 ### Defining Properties
 <ol>
 	<li>C#6 introduced a new feature called <b>expression based properties</b>
-		<p>
-		//Field used by property<br/>
-		private int myDoubledInt = 5;<br/><br/>
-		//Property<br/>	
-		public int MyDoubledIntProp => (myDoubledInt * 2);		
-		</p>
+<p>
+
+```C#
+//Field used by property
+private int myDoubledInt = 5;
+//Property
+public int MyDoubledIntProp => (myDoubledInt * 2);		
+```
+</p>
 	</li>
 </ol>
 
 ### Automatic Properties
 <ol>
 	<li>An automatic property is declared with a simplified syntax and the C# compiler fills in the blaks for you
-		<p>
-			public int MyIntProp { get; set; }
-		</p>
+<p>
+
+```C#
+public int MyIntProp { get; set; }
+```
+</p>
 	</li>
 	<li>You can create an automatic property in Visual Studio by typing <b>'prop'</b> and then prest <b>TAB twice</b></li>
 </ol>
@@ -1556,3 +1608,26 @@ public interface IGrassMuncher<in T> { }
 	</li>
 	<li>For more information regarding <b>Variance</b> see Chapter 12 Exercise: Variance</li>
 </ol>
+
+## Additional C# Techniques
+
+### Events
+<ol>
+	<li><b>Events</b> are similiar to exceptions in that they are <b>raised(throw)</b> by objects</li>
+	<li>Instead of handling events as we do exceptions (try...catch) we instead <b>subscribe</b> to events
+		<ul>
+			<li>Subscribing to an event means supplying code that will be executed when an event is raised</li>
+			<li>The code that handles the event once it is raised is known as an <b>event handler</b></li>
+		</ul>
+	</li>
+	<li>The basic sequence for event handling is as follows:
+		<ul>
+			<li>First, an application creates an object that can raise an event</li>
+			<li>Next, the application subscribes to the event (creates an event handler)</li>
+			<li>When the event is raised, the subscriber is notified</li>
+			<li>The object that raises the event can pass any relevant information via parameters to the event handler</li>
+		</ul>
+	</li>
+	<li>For more information, see Chapter 13 Exercise: Handling Events</li>
+</ol>
+
