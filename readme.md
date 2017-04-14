@@ -617,13 +617,15 @@ public class MyDerivedClass : MyBaseClass
 			</li>
 		</ul>
 		<li>You could also do</li>
-		<li>MyDerivedClass myObj = new MyDerivedClass(4)
 			<ul>
-				<li>System.Object.Object() constructor will execute</li>
-				<li>MyBaseClass.MyBaseClass() constructor will execute</li>
-				<li>MyDerivedClass.MyDerivedClass(int i) constructor will execute</li>
+				<li>MyDerivedClass myObj = new MyDerivedClass(4)
+					<ul>
+						<li>System.Object.Object() constructor will execute</li>
+						<li>MyBaseClass.MyBaseClass() constructor will execute</li>
+						<li>MyDerivedClass.MyDerivedClass(int i) constructor will execute</li>
+					</ul>
+				</li>
 			</ul>
-		</li>
 	</li>
 	<li>If you wanted to control what base class constructor is called, you can use a <b>constructor initializer</b>
 		<ul>
