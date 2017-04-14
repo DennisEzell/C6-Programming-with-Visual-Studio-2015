@@ -1188,7 +1188,7 @@ public class ConvClass2
 	<li>If no conversion form &lt;operand&gt; to &lt;type&gt; is possible, then the result of the expression will be <b>null</b></li>
 </ol>
 
-## Generics
+## Chapter12: Generics
 
 ### What are Generics?
 <ol>
@@ -1605,7 +1605,7 @@ public interface IGrassMuncher<in T> { }
 	<li>For more information regarding <b>Variance</b> see Chapter 12 Exercise: Variance</li>
 </ol>
 
-## Additional C# Techniques
+## Chapter 13: Additional C# Techniques
 
 ### Events
 <ol>
