@@ -215,13 +215,7 @@ Console.WriteLine(@”Foo “”Bar”” Baz “”Quux”””);
 Foo “Bar” Baz “Quux”
 ```
 </p>
-		<ul>
-				<ul>
-
-					<li>To see an example of String interpolation used with a verbatim command, look at Ch05Ex01-TypeConversion</li>
-				</ul>
-		</ul>
-	</li>
+	<li>To see an example of String interpolation used with a verbatim command, look at Ch05Ex01-TypeConversion</li>
 </ol>
 
 ### Namespaces
