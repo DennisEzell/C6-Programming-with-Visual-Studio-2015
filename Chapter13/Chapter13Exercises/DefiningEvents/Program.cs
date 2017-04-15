@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using EventLib;
+using static System.Console;
 
 namespace DefiningEvents
 {
@@ -6,7 +7,7 @@ namespace DefiningEvents
     {
         static void Main(string[] args)
         {
-            Connection myConnection = new Connection();
+            Connection myConnection = new Connection("Connection 1");
             Display myDisplay = new Display();
 
             myConnection.MessageArrived += myDisplay.DisplayMessage;

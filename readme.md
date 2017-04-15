@@ -1627,3 +1627,41 @@ public interface IGrassMuncher<in T> { }
 	<li>For more information, see Chapter 13 Exercise: Handling Events</li>
 </ol>
 
+### Anonymous Methods
+<ol>
+	<li>Instead of defining event handler methods, you can choose to use <b>anonymous methods</b></li>
+	<ul>
+		<li>An anonymous method doesnt actually exist as a method in the traditional sense, that is to say it isnt a method on any particular class</li>
+		<li>Anonymous methods are created purely for use as <b>targe for a delegate</b></li>
+	</ul>
+	<li>To create an anonymous method:</li>
+<p>
+
+```C#
+delegate(parameters)
+{
+	//Anonymous method code
+};
+```
+</p>
+	<li><b>parametes</b> is a list of parameters matching those of the delegate type you are instantiating, such as</li>
+<p>
+
+```C#
+delegate(Connection source, MessageArrivedEventArgs e)
+{
+	//Anonymous method code matching MessageHandler event (Chatper13Exercises --> MultiPurposeEvents)
+}
+```
+</p>
+	<li>An interesting point about <b>anonymous methods</b> is that they are effectively local to the code block that contains them, and have access to the local variables in this scope</li>
+	<ul>
+		<li>If you use a local variable, then it becomes an <b>outer</b> variable</li>
+		<ul>
+			<li><b>Outer</b> variables are NOT disposed of when they go out of scope as other local variables are</li>
+			<li>They live on until the anonymous methods that use them are destroyed</li>
+			<li>Be mindful of this if outer variables take up large amounts of memory or uses resources in expensive ways as it could lead to memory or performance problems.</li>
+		</ul>		
+	</ul>
+</ol>
+
