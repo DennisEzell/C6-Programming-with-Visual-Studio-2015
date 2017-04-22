@@ -27,7 +27,7 @@ namespace CardApplication
 
             for (int i = 0; i < 52; i++)
             {
-                Card tempCard = deck.getCard(i);
+                Card tempCard = deck.GetCard(i);
                 WriteLine(tempCard.ToString());
             }
             ReadKey();
@@ -41,12 +41,12 @@ namespace CardApplication
         private static void TestCloning(Deck deck)
         {
             Deck newDeck = deck.Clone() as Deck;
-            WriteLine($"The first card in the original deck is: {deck.getCard(0)}");
-            WriteLine($"The first card in the new deck is: {newDeck.getCard(0)}");
+            WriteLine($"The first card in the original deck is: {deck.GetCard(0)}");
+            WriteLine($"The first card in the new deck is: {newDeck.GetCard(0)}");
             deck.Shuffle();
             WriteLine($"Original deck shuffled");
-            WriteLine($"The first card in the original deck is: {deck.getCard(0)}");
-            WriteLine($"The first card in the new deck is: {newDeck.getCard(0)}");
+            WriteLine($"The first card in the original deck is: {deck.GetCard(0)}");
+            WriteLine($"The first card in the new deck is: {newDeck.GetCard(0)}");
             ReadKey();
         }
 

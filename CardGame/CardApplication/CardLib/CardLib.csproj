@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Class\Card.cs" />
     <Compile Include="Class\Deck.cs" />
+    <Compile Include="Class\Game.cs" />
+    <Compile Include="Class\Player.cs" />
     <Compile Include="Collection\Cards.cs" />
     <Compile Include="Enum\Rank.cs" />
     <Compile Include="Enum\Suit.cs" />

@@ -7,6 +7,12 @@ namespace CardLib.Class
     public class Deck : ICloneable
     {
         /// <summary>
+        /// Event to reshuffle the deck when last card is drawn
+        /// Implemented based on Chapter 13, @page 358
+        /// </summary>
+        public event EventHandler LastCardDrawn;
+
+        /// <summary>
         /// Fields
         /// </summary>
         private Cards cards = new Cards();
@@ -68,15 +74,19 @@ namespace CardLib.Class
         /// </summary>
         /// <param name="cardNum">The card to retrieve</param>
         /// <returns></returns>
-        public Card getCard(int cardNum)
+        public Card GetCard(int cardNum)
         {
             if (cardNum >= 0 && cardNum <= 51)
             {
+                if ((cardNum == 51) && (LastCardDrawn != null))
+                {
+                    LastCardDrawn(this, EventArgs.Empty);
+                }
                 return cards[cardNum];
             }
             else
             {
-                throw (new System.ArgumentOutOfRangeException("cardNum", cardNum, "Value must be between 0 and 51."));
+                throw (new ArgumentOutOfRangeException("cardNum", cardNum, "Value must be between 0 and 51."));
             }
         }
 
