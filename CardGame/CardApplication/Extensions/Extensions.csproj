@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67E2ACA2-7AC2-4989-B64A-C89CA1F82BD8}</ProjectGuid>
+    <ProjectGuid>{5FEF554F-65A4-4A77-83E7-E166FDF497CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CardLib</RootNamespace>
-    <AssemblyName>CardLib</AssemblyName>
+    <RootNamespace>Extensions</RootNamespace>
+    <AssemblyName>Extensions</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,20 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Card.cs" />
-    <Compile Include="Class\Deck.cs" />
-    <Compile Include="Class\Game.cs" />
-    <Compile Include="Class\Player.cs" />
-    <Compile Include="Collection\Cards.cs" />
-    <Compile Include="Enum\Rank.cs" />
-    <Compile Include="Enum\Suit.cs" />
+    <Compile Include="Extension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Extensions\Extensions.csproj">
-      <Project>{5fef554f-65a4-4a77-83e7-e166fdf497ce}</Project>
-      <Name>Extensions</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

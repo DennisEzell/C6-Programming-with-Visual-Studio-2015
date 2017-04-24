@@ -1,6 +1,8 @@
 ﻿using static System.Console;
+using static System.Convert;
 using CardLib.Class;
 using CardLib.Enum;
+using System.Linq;
 
 /// <summary>
 /// Right click Sln and set CardTestApp as the startup project
@@ -11,10 +13,76 @@ namespace CardApplication
     {
         static void Main(string[] args)
         {
-            Deck myDeck = new Deck();
+            //Deck myDeck = new Deck();
             //TestShuffle(myDeck);
             //TestCloning(myDeck);
-            TestOperatorOverloading();
+            //TestOperatorOverloading();
+            PlayFinalGame();
+
+        }
+
+        /// <summary>
+        /// Test method to use final version of the Card Application
+        /// The finished version of the game does the following:
+        ///     (1) An introduction is displayed
+        ///     (2) The user is prompted for a number of players between 2 and 7
+        ///     (3) An array of <see cref="Player"/> objects is set up accordingly
+        ///     (4) Each Player is prompted for a name, used to intialize one <see cref="Player"/> object in the array
+        ///     (5) A <see cref="Game"/> object is created and players are assigned using the <see cref="Game.SetPlayers"/> method.
+        ///     (6) The Game is started using the <see cref="Game.Game"/> method
+        ///     (7) The int return value of <see cref="Game.PlayGame"/> is used to display a winning message
+        ///         -The value returned is the index of the winning player in the Player array
+        /// </summary>
+        private static void PlayFinalGame()
+        {
+            //Step (1): Display introduction
+            WriteLine("7 Of a Kind: a new and exciting game.");
+            WriteLine("To win, you must have 7 cards of the same suit in your hand.\n");
+
+            bool inputOk = false;
+            int choice = 1;
+
+            do { inputOk = GetPlayers(ref choice);}
+            while (!inputOk);
+            
+            //Get player names
+            Player[] players = new Player[choice];
+            foreach(var player in players.Select((player, index) => new { index, player }))
+            {
+                WriteLine($"Player {player.index}, enter your name");
+                players[player.index] = new Player(ReadLine());
+            }
+
+            //Start game
+            Game newGame = new Game();
+            newGame.SetPlayers(players);
+            int whoWon = newGame.PlayGame();
+            WriteLine($"{players[whoWon].Name} has won the game");
+            ReadKey();
+        }
+
+        /// <summary>
+        /// Helper method to ensure proper number of players is supplied
+        /// </summary>
+        /// <param name="choice"></param>
+        /// <returns></returns>
+        private static bool GetPlayers(ref int choice)
+        {
+            WriteLine("How many players (2-7)?");
+            string input = ReadLine();
+            try
+            {
+                choice = ToInt32(input);
+                if (choice >= 2 && choice <= 7)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>

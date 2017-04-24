@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using static System.Console;
+using Extensions;
 
 namespace CardLib.Class
 {
@@ -28,7 +29,7 @@ namespace CardLib.Class
             discardedCards = new Cards();
         }
 
-        private void SetPlayers(Player[] newPlayers)
+        public void SetPlayers(Player[] newPlayers)
         {
             if(newPlayers.Length > 7)
             {
@@ -49,14 +50,44 @@ namespace CardLib.Class
             {
                 //Deal the player 7 cards
                 Action dealCardToPlayer = () => player.PlayHand.Add(playDeck.GetCard(currentCard++));
-                Enumerable.Repeat(dealCardToPlayer, 7);
+                Enumerable.Repeat(dealCardToPlayer, 7).RepeatAction();
             }
         }
 
-        //TODO: implement this
         public int PlayGame()
         {
-            return null;
+            if (players == null) return -1;
+
+            //Deal initial hands
+            DealHands();
+            //Initialize game vars, including an intial card to place on the table: playCard
+            bool GameWon = false;
+            int currentplayer;
+            Card playCard = playDeck.GetCard(currentCard++);
+            discardedCards.Add(playCard);
+
+            //main game loop
+            do
+            {
+                //Loop Through players in each game round
+                foreach (var item in players.Select((player, index) => new { player, index }))
+                {
+                    //Write out current player, player hand, and the card on the table
+                    WritePlayerInfo(item.player);
+                }
+
+                GameWon = true;
+            }
+            while (!GameWon);
+
+            return 0;
+        }
+
+        private void WritePlayerInfo(Player currentPlayer)
+        {
+            WriteLine($"{currentPlayer.Name}'s turn.");
+            WriteLine($"Current Hand: ");
+            currentPlayer.PlayHand.ForEach(c => WriteLine(c.ToString()));
         }
     }
 }
