@@ -1665,3 +1665,40 @@ delegate(Connection source, MessageArrivedEventArgs e)
 	</ul>
 </ol>
 
+### Attributes
+<ol>
+	<li><b>Attributes</b> provide additional information to code that consumes types that you create</li>
+	<li>Attributes serve as a way for you to mark sections of coce with information that can be read externally and used any number of ways to affect how your types are used
+		<ul>
+			<li>This is often refered to as <b>decorating</b></li>
+		</ul>
+	</li>
+	<li><b>Reading Attributes</b>
+		<ul>
+			<li>In order to read attribute values, you hae to use a technique called <b>reflection</b></li>
+			<li>Essentially, reflection involves using information stored <b>Type</b> objects along with the <b>System.Reflection</b> namespace to work with they type information</li>
+			<li>An example of reading attributes would be using the <b>Type.GetCustomAttributes()</b> method</li>			
+		</ul>
+	</li>
+<p>
+
+```C#
+Type classType = typeof(DecoratedClass);
+object[] customAttributes = classType.GetCustomAttributes(true);
+
+foreach(object customAttribute in customAttributes)
+{
+	WriteLine($"Attribute of type {customAttribute} found.");
+}
+```
+</p>
+	<li><b>Type.GetCustomAttributes()</b> takes two arguments
+		<ul>
+			<li>Type/Types of attributes you are interested in</li>
+				<ul>
+					<li>If you omit this vlaue then all attribute types are returned.</li>
+				</ul>
+			<li>Boolean indicating whether you want to look at just the current class or the class and all classes that derive from it</li>
+		</ul>
+	</li>
+</ol>
