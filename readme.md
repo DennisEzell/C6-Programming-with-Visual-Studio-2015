@@ -1692,7 +1692,7 @@ foreach(object customAttribute in customAttributes)
 }
 ```
 </p>
-	<li>	
+
 		<ul>
 			<li><b>Type.GetCustomAttributes()</b> takes two arguments
 				<ul>
@@ -1704,5 +1704,5 @@ foreach(object customAttribute in customAttributes)
 				</ul>
 			</li>
 		</ul>
-	</li>
+
 </ol>
