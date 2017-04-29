@@ -1679,7 +1679,7 @@ delegate(Connection source, MessageArrivedEventArgs e)
 			<li>Essentially, reflection involves using information stored <b>Type</b> objects along with the <b>System.Reflection</b> namespace to work with they type information</li>
 			<li>An example of reading attributes would be using the <b>Type.GetCustomAttributes()</b> method</li>			
 		</ul>
-	</li>
+
 <p>
 
 ```C#
@@ -1692,15 +1692,17 @@ foreach(object customAttribute in customAttributes)
 }
 ```
 </p>
-	<li>
-		<li><b>Type.GetCustomAttributes()</b> takes two arguments
-			<ul>
-				<li>Type/Types of attributes you are interested in</li>
-					<ul>
-						<li>If you omit this vlaue then all attribute types are returned.</li>
-					</ul>
-				<li>Boolean indicating whether you want to look at just the current class or the class and all classes that derive from it</li>
-			</ul>
-		</li>
+		
+		<ul>
+			<li><b>Type.GetCustomAttributes()</b> takes two arguments
+				<ul>
+					<li>Type/Types of attributes you are interested in</li>
+						<ul>
+							<li>If you omit this vlaue then all attribute types are returned.</li>
+						</ul>
+					<li>Boolean indicating whether you want to look at just the current class or the class and all classes that derive from it</li>
+				</ul>
+			</li>
+		</ul>
 	</li>
 </ol>
