@@ -1692,13 +1692,15 @@ foreach(object customAttribute in customAttributes)
 }
 ```
 </p>
-	<li><b>Type.GetCustomAttributes()</b> takes two arguments
-		<ul>
-			<li>Type/Types of attributes you are interested in</li>
-				<ul>
-					<li>If you omit this vlaue then all attribute types are returned.</li>
-				</ul>
-			<li>Boolean indicating whether you want to look at just the current class or the class and all classes that derive from it</li>
-		</ul>
+	<li>
+		<li><b>Type.GetCustomAttributes()</b> takes two arguments
+			<ul>
+				<li>Type/Types of attributes you are interested in</li>
+					<ul>
+						<li>If you omit this vlaue then all attribute types are returned.</li>
+					</ul>
+				<li>Boolean indicating whether you want to look at just the current class or the class and all classes that derive from it</li>
+			</ul>
+		</li>
 	</li>
 </ol>
