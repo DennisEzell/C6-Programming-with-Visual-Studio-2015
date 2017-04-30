@@ -1731,6 +1731,7 @@ class DoesInterestingThingsAttribute : Attribute
 	}
 }
 ```
+</p>
 	<li>The above code can be used in the following fashion to decorate a class</li>
 <p>
 
@@ -1738,7 +1739,6 @@ class DoesInterestingThingsAttribute : Attribute
 [DoesInterestingThings(1000, WhatDoesItDo = "voodoo")]
 public class DecoratedClass {}
 ```
-</p>
 </p>
 </ol>
 
@@ -1790,7 +1790,7 @@ var curry = new
 		<li>There are two differences between the two approaches
 			<ul>
 				<li>Firstc, the <b>var</b> keyword is used</li>
-				<li>Second, No type naem is specified afte rthe <b>new keyword</b></li>
+				<li>Second, No type name is specified after the <b>new keyword</b></li>
 			</ul>
 		</li>
 	</ul>
