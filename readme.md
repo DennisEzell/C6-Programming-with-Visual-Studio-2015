@@ -1798,3 +1798,20 @@ var curry = new
 	</ul>
 	<li><b>Note</b> Properties of anonymous types are <b>read-only</b>, meaning that if you want to change the value of properties then you <b>CANNOT</b> use anonymous types</li>
 </ol>
+
+
+
+
+# Appendix A: useful information
+<ol>
+	<li>Git command for creating an alias to add/commit/push for readme updates</li>
+<p>
+
+```C#
+$ git config --global alias.readme '! git add . && git commit -m "Updated ReadMe" && git push'
+```
+</p>
+	<ul>
+		<li>You can then run $git readme</li>
+	</ul>
+</ol>
