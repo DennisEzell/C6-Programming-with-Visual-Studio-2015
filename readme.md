@@ -1756,7 +1756,7 @@ public class Curry
 {
 	public string MainIngrediant { get; set; }
 	public string Style { get; set; }
-	publci int Spiciness { get; set; }
+	public int Spiciness { get; set; }
 }
 ```
 </p>
