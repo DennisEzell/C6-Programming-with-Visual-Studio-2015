@@ -1713,9 +1713,9 @@ foreach(object customAttribute in customAttributes)
 					<li>These two things can be achieved by using the <b>AttributeUsageAttribute</b></li>
 				</ul>
 			</li>
+			<li>The below example shows an attribute that can be applied(once) to a class or property</li>
 		</ul>
 	</li>
-	<li>The below example shows an attribute that can be applied(once) to a class or property</li>
 <p>
 
 ```C#
@@ -1732,7 +1732,9 @@ class DoesInterestingThingsAttribute : Attribute
 }
 ```
 </p>
-	<li>The above code can be used in the following fashion to decorate a class</li>
+	<ul>
+		<li>The above code can be used in the following fashion to decorate a class</li>
+	</ul>
 <p>
 
 ```C#
