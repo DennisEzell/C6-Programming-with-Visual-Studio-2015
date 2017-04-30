@@ -1701,4 +1701,98 @@ foreach(object customAttribute in customAttributes)
 }
 ```
 </p>
+	<li><b>Creating Attributes</b>
+		<ul>
+			<li>You can create your own attributes by simply deriving from the <b>System.Attribute</b> class</li>
+			<li>Sometimes, you dont need to do anything else, as no additional information is required if your code is interested only in the presence or absences of your attribute</li>
+			<li>You can also specify a nondefault constructor and/or writable properties if you ant the attribute to be customizable</li>
+			<li>You also need to decide two things about yoru attribute:
+				<ul>
+					<li>What type of target it can be applied to (class, property, and so on)</li>
+					<li>Whether it can be applied more than once to the same target</li>
+					<li>These two things can be achieved by using the <b>AttributeUsageAttribute</b></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>The below example shows an attribute that can be applied(once) to a class or property</li>
+<p>
+
+```C#
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]
+class DoesInterestingThingsAttribute : Attribute
+{
+	public string WhatDoesItDo { get; set;}
+	public int HowManyTimes { get; set; }
+	
+	public DoesInterestingThingsAttribute(int howManyTimes)
+	{
+		HowManyTimes = howManyTimes;
+	}
+}
+```
+	<li>The above code can be used in the following fashion to decorate a class</li>
+<p>
+
+```C#
+[DoesInterestingThings(1000, WhatDoesItDo = "voodoo")]
+public class DecoratedClass {}
+```
+</p>
+</p>
+</ol>
+
+### Anonymous Types
+<ol>
+	<li><b>Anonymous types</b> are a way to simplify the programming model of having to define classes that are simple data stores (classes that only have properties)</li>
+	<li>The idea behind anonymous types is that rather than define these simple data storage types, you can instead use the C# compiler to automatically create types based on the data that you want to store int them</li>
+	<li>Example, say you have an <b>Curry</b> object that holds all the relevant information for creating a new Curry dish</li>
+<p>
+
+```C#
+public class Curry 
+{
+	public string MainIngrediant { get; set; }
+	public string Style { get; set; }
+	publci int Spiciness { get; set; }
+}
+```
+</p>
+	<ul>
+		<li>The above class can be instantiated with:</li>
+	</ul>
+<p>
+
+```C#
+Curry curry = new Curry
+{
+	MainIngrediant = "Lamb",
+	Style = "Dhansak",
+	Spiciness = 5
+}
+```
+</p>
+	<ul>
+		<li>With Anonymous Types you could instantiate with the following</li>
+	</ul>
+<p>
+
+```C#
+var curry = new 
+{
+	MainIngrediant = "Lamb",
+	Style = "Dhansak",
+	Spiciness = 5
+}
+```
+</p>
+	<ul>
+		<li>There are two differences between the two approaches
+			<ul>
+				<li>Firstc, the <b>var</b> keyword is used</li>
+				<li>Second, No type naem is specified afte rthe <b>new keyword</b></li>
+			</ul>
+		</li>
+	</ul>
+	<li><b>Note</b> Properties of anonymous types are <b>read-only</b>, meaning that if you want to change the value of properties then you <b>CANNOT</b> use anonymous types</li>
 </ol>

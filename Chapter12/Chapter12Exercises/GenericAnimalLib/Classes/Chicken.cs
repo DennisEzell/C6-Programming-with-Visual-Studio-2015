@@ -6,7 +6,7 @@ namespace GenericAnimalLib.Classes
     {
         public void LayEgg() => WriteLine($"{name} has laid an egg");
         public Chicken(string newName) : base(newName) { }
-
+        public Chicken() { }
         public override void MakeANoise() => WriteLine($"{name} says 'cluck'!");        
     }
 }

@@ -7,6 +7,7 @@ namespace GenericAnimalLib.Classes
     {
         public void Milk() => WriteLine($"{name} has been milked.");
         public Cow(string newName) : base(newName) { }
+        public Cow() { }
         public override void MakeANoise() => WriteLine($"{name} says 'moo'!");
     }
 }
