@@ -1814,7 +1814,6 @@ var curry = new
 dynamic myDynamicVar;
 ```
 </p>
-	<li>
 		<ul>
 			<li>Unlike the <b>var</b> keyword, there really is a dynamic type, so there is no need to initialize the value of <b>myDynamicVar</b> when its declared
 				<ul>
@@ -1823,7 +1822,6 @@ dynamic myDynamicVar;
 			</li>
 			<li>Once you have a dynamic variable, you can proceed to access its members</li>
 		</ul>
-	</li>
 <p>
 
 ```C#
