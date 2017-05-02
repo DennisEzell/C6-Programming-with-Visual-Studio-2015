@@ -1814,26 +1814,24 @@ var curry = new
 dynamic myDynamicVar;
 ```
 </p>
-		<ul>
-			<li>Unlike the <b>var</b> keyword, there really is a dynamic type, so there is no need to initialize the value of <b>myDynamicVar</b> when its declared
-				<ul>
-					<li><b>NOTE:</b> Unusually, the <b>dynamic</b> type exists only at compile time; at runtime the System.Object type is used instead.</li>
-				</ul>
-			</li>
-			<li>Once you have a dynamic variable, you can proceed to access its members</li>
-		</ul>
+	<ul>
+		<li>Unlike the <b>var</b> keyword, there really is a dynamic type, so there is no need to initialize the value of <b>myDynamicVar</b> when its declared
+			<ul>
+				<li><b>NOTE:</b> Unusually, the <b>dynamic</b> type exists only at compile time; at runtime the System.Object type is used instead.</li>
+			</ul>
+		</li>
+		<li>Once you have a dynamic variable, you can proceed to access its members</li>
+	</ul>
 <p>
 
 ```C#
 myDynamicVar.DoSomething("With This!");
 ```
 </p>
-	<li>
-		<ul>
-			<li>Regardless of the value that <b>myDynamicVar</b> contains, the code will compile</li>
-			<li>However, if the requested member does not exist(the .DoSomething() in this case), you will get an exception when the code is executed, of type <b>RuntimeBinderException</b></li>
-		</ul>
-	</li>
+	<ul>
+		<li>Regardless of the value that <b>myDynamicVar</b> contains, the code will compile</li>
+		<li>However, if the requested member does not exist(the .DoSomething() in this case), you will get an exception when the code is executed, of type <b>RuntimeBinderException</b></li>
+	</ul>
 	<li><b>WARNING:</b> In general, you should use dynamic types only when they are your only optionally
 		<ul>
 			<li>When you are dealing with non-.NET objects</li>
