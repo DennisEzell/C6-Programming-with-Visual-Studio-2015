@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLib", "EventLib\EventL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingInitializers", "UsingInitializers\UsingInitializers.csproj", "{0363AC49-1D1E-48CE-AD53-6D16279C60B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymousTypes", "AnonymousTypes\AnonymousTypes.csproj", "{66F0C5E4-3B53-40FC-9E63-34AC3C75168E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTypes", "DynamicTypes\DynamicTypes.csproj", "{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{0363AC49-1D1E-48CE-AD53-6D16279C60B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0363AC49-1D1E-48CE-AD53-6D16279C60B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0363AC49-1D1E-48CE-AD53-6D16279C60B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66F0C5E4-3B53-40FC-9E63-34AC3C75168E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66F0C5E4-3B53-40FC-9E63-34AC3C75168E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66F0C5E4-3B53-40FC-9E63-34AC3C75168E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66F0C5E4-3B53-40FC-9E63-34AC3C75168E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

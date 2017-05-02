@@ -1799,6 +1799,65 @@ var curry = new
 	<li><b>Note</b> Properties of anonymous types are <b>read-only</b>, meaning that if you want to change the value of properties then you <b>CANNOT</b> use anonymous types</li>
 </ol>
 
+### Dynamic Lookup
+<ol>
+	<li><b>Dynamic Lookup</b> gives the programmer a way to write code that is interoperable with older technology, such as Component Object Model(COM), or other dynamic languages like JavaScript, Python, and Ruby</li>
+	<li>Under the hood, dynamic lookup is supported by the Dynamic Language Runtime(DLR), which is part of .NET 4.5, just as the CLR is</li>
+	<li>The <b>dynamic</b> type
+		<ul>
+			<li>C#4 introduced the <b>dynamic</b> keyword, which you can use to define variables such as:</li>
+		</ul>
+	</li>
+<p>
+
+```C#
+dynamic myDynamicVar;
+```
+</p>
+	<li>
+		<ul>
+			<li>Unlike the <b>var</b> keyword, there really is a dynamic type, so there is no need to initialize the value of <b>myDynamicVar</b> when its declared
+				<ul>
+					<li><b>NOTE:</b> Unusually, the <b>dynamic</b> type exists only at compile time; at runtime the System.Object type is used instead.</li>
+				</ul>
+			</li>
+			<li>Once you have a dynamic variable, you can proceed to access its members</li>
+		</ul>
+	</li>
+<p>
+
+```C#
+myDynamicVar.DoSomething("With This!");
+```
+</p>
+	<li>
+		<ul>
+			<li>Regardless of the value that <b>myDynamicVar</b> contains, the code will compile</li>
+			<li>However, if the requested member does not exist(the .DoSomething() in this case), you will get an exception when the code is executed, of type <b>RuntimeBinderException</b></li>
+		</ul>
+	</li>
+	<li><b>WARNING:</b> In general, you should use dynamic types only when they are your only optionally
+		<ul>
+			<li>When you are dealing with non-.NET objects</li>
+		</ul>
+	</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
