@@ -1839,6 +1839,55 @@ myDynamicVar.DoSomething("With This!");
 	</li>
 </ol>
 
+### Optional Parameters
+<ol>
+	<li>In order to define a method parameter as <b>optional</b>, you supply that parameter a default value that will be used if not value is supplied</li>
+<p>
+
+```C#
+public List<string> GetWords(string sentence, bool capitalizeWords = false)
+{
+	...
+}
+```
+</p>
+	<li>The general syntax for optional parameters is listed below as the above code segment illustrated</li>
+<p>
+
+```C#
+<parameterType> <parameterName> = <defaultValue>
+```
+</p>
+	<li>You can also use the <b>[Optional]</b> attribute to mark a parameter as optional, as illustrated below</li>
+<p>
+
+```C#
+[Optional] <parameterType> <parameterName>
+```
+</p>
+	<ul>
+		<li><b>Warning:</b> if you use the [Optional] attribute to make a parameter optional, then you <b>CANNOT</b> provide a default value for it</li>
+	</ul>
+	<li>Optional parameters MUST appear at the end of the parameter list</li>
+</ol>
+
+### Named Parameters
+<ol>
+	<li>C#4 introduced <b>named parameters</b> which enable you to specify whichever parameters you want
+		<ul>
+			<li>This doesn't require any special syntax in you method definition; it is a technique that you use when calling a method</li>
+		</ul>
+	</li>
+<p>
+
+```C#
+MyMethod(<param1Name> : <para1Value>, ..., <paramNName> : <paramNValue>);
+```
+</p>
+	<li>This syntax can be useful if you have several optional parameters in a method signature and only want to leverage a subset of them</li>
+	<li>See Chapter13Exercises - NamedAndOptionalParams for more info</li>
+</ol>
+
 
 
 

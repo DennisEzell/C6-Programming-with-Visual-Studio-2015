@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymousTypes", "Anonymous
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTypes", "DynamicTypes\DynamicTypes.csproj", "{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamedAndOptionalParams", "NamedAndOptionalParams\NamedAndOptionalParams.csproj", "{CEC83EDB-D490-4FA8-A5F9-2A35D32C87A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70BC5AEF-E49C-4E08-8C43-77C00EB42F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC83EDB-D490-4FA8-A5F9-2A35D32C87A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC83EDB-D490-4FA8-A5F9-2A35D32C87A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC83EDB-D490-4FA8-A5F9-2A35D32C87A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC83EDB-D490-4FA8-A5F9-2A35D32C87A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
