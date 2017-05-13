@@ -1888,7 +1888,36 @@ MyMethod(<param1Name> : <para1Value>, ..., <paramNName> : <paramNValue>);
 	<li>See Chapter13Exercises - NamedAndOptionalParams for more info</li>
 </ol>
 
-
+## Chapter 18: Files
+### Streams
+<ol>
+	<li>All input and output in the .NET Framework involves use of <b>streams</b>
+		<ul>
+			<li>A stream is an abstract representation of a <b>serial device</b></li>
+			<li>A serial device is something that stores and/or accesses data in a linear manner, that is, one byte at a time, sequentially</li>
+		</ul>
+	</li>
+	<li>Stream Classes
+		<ul>
+			<li>FileStream
+				<ul>
+					<li>Represents a file that can be written to, read from, or both</li>
+					<li>This file can be written to and read from synchronously or asynchronously</li>
+				</ul>
+			</li>
+			<li>StreamReader
+				<ul>
+					<li>Reads character data from a stream and can be created by using a <b>FileStream</b> as a base</li>
+				</ul>
+			</li>
+			<li>StreamWriter
+				<ul>
+					<li>Writes character data to a stream and can be created by using a <b>FileStream</b> as a base</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ol>
 
 
 
