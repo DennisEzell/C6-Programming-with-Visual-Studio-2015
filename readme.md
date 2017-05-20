@@ -1919,7 +1919,160 @@ MyMethod(<param1Name> : <para1Value>, ..., <paramNName> : <paramNValue>);
 	</li>
 </ol>
 
+### Monitoring the file system
+<ol>
+	<li>You can use the <b>FileSystemWatcher</b> class to monitor changes to file system data</li>
+	<li>You can monitor both files and directories, and provide a filter
+		<ul>
+			<li>The filter can be used to modify only files of a certain extension</li>
+		</ul>
+	</li>
+	<li><b>FileSystemWatcher</b> instances notify you of changes by raising events that you can handle in your code</li>
+</ol>
 
+## Chapter 19: XML and JSON
+### XmlDocument Class 
+<ol>
+	<li>Normally, the first thing an application wants to do with XML is read it from its source</li>
+	<li>This is where you use the <b>XmlDocument</b> class
+		<ul>
+			<li>The <b>XmlDocument</b> is an in-memory representation of the xml</li>
+		</ul>
+	</li>
+</ol>
+
+### XmlElement Class
+<ol>
+	<li>The <b>DocumentElement</b> property of the XmlDocument returns an instance of the <b>XmlElement</b> that represents the root element of the XmlDoucment</li>
+<p>
+
+```C#
+XmlDoucment doc = new XmlDocument();
+doc.Load(@"C:\Users\Deeze814\Source\Repos\C6-Programming-with-Visual-Studio-2015\Chapter19\books.xml");
+XmlElment element = doc.DocumentElement;
+```
+</p>
+</ol>
+
+## Chapter 20: LINQ Query Syntax
+### What is LINQ
+<ol>
+	<li>LINQ (<b>Language Integrated Query</b>) is an extension to the C# language that integrates data query directly into the programming language itself</li>
+	<li>LINQ provides a portable, consistent way of querying, sorting, and grouping many different kinds of data (XML, JSON, SQL, etc...)</li>
+</ol>
+
+### LINQ to XML Functional Constructor
+<ol>
+	<li>While you can create XML documents in code with the XML DOM, LINQ to XML provides an easier way to create XML documents called <b>function construction</b></li>
+	<li>In functional construction, the constructor calls can be nested in a way that naturally reflects the structure of XML</li>
+<p>
+
+```C#
+XDocument xdoc = new XDocument(
+    new XElement("customers",
+        new XElement("customer",
+            new XAttribute("ID", "A"),
+            new XAttribute("City", "New York"),
+            new XAttribute("Region", "North America"),
+            new XElement("order",
+                new XAttribute("Item", "Widget"),
+                new XAttribute("Price", 100)
+            ),
+            new XElement("order",
+                new XAttribute("Item", "Tire"),
+                new XAttribute("Price", 200)
+            )
+        ),
+        new XElement("customer",
+            new XAttribute("ID", "B"),
+            new XAttribute("City", "Mumbai"),
+            new XAttribute("Region", "Asia"),
+            new XElement("order",
+                    new XAttribute("Item", "Oven"),
+                    new XAttribute("Price", 501)
+            )
+        )
+    )
+);
+```
+</p>
+</ol>
+
+### LINQ syntax
+<ol>
+	<li>A LINQ query has four parts
+		<ul>
+			<li><b>Variable Declaration:</b></li>
+				<ul>
+					<li>Begins with keyword <b>var</b></li>
+					<li>The variable is assigned using a <b>query expression</b></li>
+					<li>The query result will be a type that implements <b>IEnumerable<T></b> interface</li>
+					<li>The compiler creates a special LINQ data type that provides an ordered list</li>
+				</ul>
+			<li><b>From clause</b>:
+				<ul>
+					<li>Specifies the data you are querying</li>
+					<li>The data source must be <b>enumerable</b>, meaning it must be an array of collection of items from which you can pick one or more elements to iterate through
+						<ul>
+							<li><b>Enumerable</b> means the datasource must support the <b>IEnumberable<T></b> interface.</li>
+						</ul>
+					</li>						
+				</ul>
+			</li>
+			<li><b>Where clause</b>:
+				<ul>
+					<li>Specifies the condition that must be true in order for the query to return that object from the datasource</li>
+					<li>The where clasue is called a <b>restriction operator</b></li>
+				</ul>
+			</li>
+			<li><b>Select clause</b>:
+				<ul>
+					<li>Specifies what items appear in the result set.</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><b>Deferred Query Execution</b>
+		<ul>
+			<li>The assignment of the query result variables only saves a plan for executing the query</li>
+			<li>With LINQ, the data itself is not retrieved until the results are accessed, this is known as <b>deferred query execution</b> or <b>lazy evaluation of results</b></li>
+		</ul>
+	</li>
+	<li>The below code block just saves the execution plan for the query</li>
+<p>
+
+```C#
+var queryResult =
+	from n in names
+	where n.StartsWith("S")
+	select n;
+```
+</p>
+	<li>The query isnt executed until you invoke the results similiar to the below code block </li>
+<p>
+
+```C#
+foreach (var name in queryResult)
+{
+	WriteLine(name);
+}
+```
+</p>
+</ol>
+
+### Aggregate Operators
+<ol>
+	<li>LINQ provides a set of aggregate operators that enable you to analyse the results of a query without having to loop through them all
+		<ul>
+			<li>Count()</li>
+			<li>Min()</li>
+			<li>Max()</li>
+			<li>Average()</li>
+			<li>Sum()</li>
+		</ul>
+	</li>
+	<li>Because aggregate operators return simple scaler types instead of a sequence for their results, thier use force immediate execution of the query with no deferred executtion</li>
+</ol>
 
 
 
