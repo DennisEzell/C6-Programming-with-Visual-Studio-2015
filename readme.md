@@ -2101,3 +2101,8 @@ $ git config --global alias.readme '! git add . && git commit -m "Updated ReadMe
 		<li>You can then run $git readme</li>
 	</ul>
 </ol>
+
+
+<ol>
+	<li>To install SQL Server Express, go to https://www.microsoft.com/en-us/sql-server/sql-server-editions-express</li>
+</ol>
