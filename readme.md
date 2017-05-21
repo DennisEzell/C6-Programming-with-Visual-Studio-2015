@@ -2074,6 +2074,8 @@ foreach (var name in queryResult)
 	<li>Because aggregate operators return simple scaler types instead of a sequence for their results, thier use force immediate execution of the query with no deferred executtion</li>
 </ol>
 
+### Chapter 21: Databases
+
 
 
 
@@ -2089,6 +2091,7 @@ foreach (var name in queryResult)
 
 
 # Appendix A: useful information
+## Helpful Git command
 <ol>
 	<li>Git command for creating an alias to add/commit/push for readme updates</li>
 <p>
@@ -2102,7 +2105,13 @@ $ git config --global alias.readme '! git add . && git commit -m "Updated ReadMe
 	</ul>
 </ol>
 
-
+## Connect to local SQL Express instance in VS
 <ol>
 	<li>To install SQL Server Express, go to https://www.microsoft.com/en-us/sql-server/sql-server-editions-express</li>
+	<li>Tools -> Connect to Databases
+		<ul>
+			<li>Entity Framework will create a database in the first local SQL Server instance it finds on the computer</li>
+		</ul>
+	</li>
+	<li>Within the <b>Add Connection</b> page, use <b>localhost\SQLEXPRESS/b></li>
 </ol>
